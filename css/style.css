@@ -113,10 +113,6 @@ nav {
     background: var(--dropdown-bg);
 }
 
-.dropdown {
-    float: left;
-}
-
 .dropdown-content {
     display: none;
     position: absolute;
@@ -134,8 +130,42 @@ nav {
     display: block;
 }
 
-.dropdown a:hover {
-    background-color: var(--dropdown-hover);
+/* Navigasi: bar horizontal di desktop, dropdown di HP */
+.nav-links {
+    display: flex;
+    float: left;
+    position: static;
+    background: transparent;
+    min-width: 0;
+    box-shadow: none;
+}
+
+.nav-links a {
+    color: var(--on-brand);
+    padding: 10px 16px;
+}
+
+.nav-links a:hover {
+    background: var(--brand-dark);
+}
+
+.nav-links a.active {
+    background: var(--brand-dark);
+    font-weight: bold;
+}
+
+.menu-btn {
+    display: none;
+    float: left;
+    width: auto;
+    background: transparent;
+    color: var(--on-brand);
+    border-top-right-radius: 0;
+    font-size: 16px;
+}
+
+.menu-btn:hover, .menu-btn:focus {
+    background: var(--brand-dark);
 }
 
 .show {
@@ -200,7 +230,7 @@ content {
     border-bottom: 0px;
     border-right: 0px;
     border-left:0px;
-    text-align: right;
+    text-align: left;
     outline: none;
     font-size: 12px;
     transition: 0.4s;
@@ -328,6 +358,61 @@ p.center {
     transition: background-color .3s ease;
 }
 
+/* Daftar arsip: tanpa nomor romawi, dengan tanggal + deskripsi */
+.archive-list li::before {
+    content: none;
+}
+
+.archive-list li {
+    margin-bottom: 16px;
+}
+
+.archive-list a {
+    color: #4a6fd4;
+}
+
+[data-theme="dark"] .archive-list a {
+    color: #8fb0ff;
+}
+
+.archive-date {
+    color: #777777;
+    font-size: 12px;
+    margin-left: 6px;
+}
+
+[data-theme="dark"] .archive-date {
+    color: #aaaaaa;
+}
+
+.archive-desc {
+    font-size: 13px;
+    color: var(--text);
+    margin-top: 2px;
+}
+
+/* Navigasi artikel sebelumnya/berikutnya */
+.article-nav {
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+.article-nav a {
+    color: #4a6fd4;
+}
+
+[data-theme="dark"] .article-nav a {
+    color: #8fb0ff;
+}
+
+.article-nav .prev {
+    float: left;
+}
+
+.article-nav .next {
+    float: right;
+}
+
 /* Responsif Android / layar kecil */
 @media only screen and (max-width:600px)
 {
@@ -383,6 +468,23 @@ footer {
 }
 .dropdown-content {
     min-width: 160px;
+}
+.menu-btn {
+    display: block;
+}
+.nav-links {
+    display: none;
+    position: absolute;
+    float: none;
+    background: var(--dropdown-bg);
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px var(--shadow);
+}
+.nav-links a {
+    display: block;
+}
+.dropdown-content.nav-links.show {
+    display: block;
 }
 .c, .cc {
     overflow-x: auto;

@@ -31,12 +31,10 @@
 </header>
 
 <nav>
-    <div class="dropdown">
-    <button onclick="myFunction()" class="dropbtn">Menu</button>
-        <div id="myDropdown" class="dropdown-content">
-            <a href="index.html">Home</a>
-            <a href="arsip.html">Arsip</a>
-        </div>
+    <button onclick="myFunction()" class="dropbtn menu-btn" type="button" aria-label="Buka menu">&#9776; Menu</button>
+    <div id="myDropdown" class="dropdown-content nav-links">
+        <a href="index.html">Home</a>
+        <a href="arsip.html" class="active">Arsip</a>
     </div>
     <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Ganti ke mode malam" title="Ganti ke mode malam">🌙</button>
 </nav>
@@ -46,15 +44,18 @@
         <div class="cc">
             <b>Arsip</b>
             <hr class="dashed"/><br>
-            <ol>
-                <li><a href="instal-apache-mysql-php-phpmyadmin-di-archlinux.html">Instal Apache, MySQL, PHP dan phpMyAdmin di Archlinux</a></li>
-                <li><a href="konfigurasi-virtual-host-apache-server-di-archlinux.html">Konfigurasi Virtual Host Apache Server Di ArchLinux</a></li>
-                <li><a href="#home">?</a></li>
-                <li><a href="#home">?</a></li>
-                <li><a href="#home">?</a></li>
-                <li><a href="#home">?</a></li>
-                <li><a href="#home">?</a></li>
-            </ol>
+            <ul class="archive-list">
+                <li>
+                    <a href="instal-apache-mysql-php-phpmyadmin-di-archlinux.html"><b>Instal Apache, MySQL, PHP dan phpMyAdmin di Archlinux</b></a>
+                    <span class="archive-date">2021</span>
+                    <p class="archive-desc">Cara instal dan konfigurasi Apache, MySQL, PHP, dan phpMyAdmin di Arch Linux.</p>
+                </li>
+                <li>
+                    <a href="konfigurasi-virtual-host-apache-server-di-archlinux.html"><b>Konfigurasi Virtual Host Apache Server Di ArchLinux</b></a>
+                    <span class="archive-date">12 Jun 2021</span>
+                    <p class="archive-desc">Cara mengatur Virtual Host Apache di Arch Linux.</p>
+                </li>
+            </ul>
         </div>
     </div>
 </content>
