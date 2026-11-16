@@ -413,6 +413,29 @@ p.center {
     float: right;
 }
 
+/* Gambar tutorial (diagram) */
+.tutorial-img {
+    text-align: center;
+    margin: 16px 0;
+}
+
+.tutorial-img img {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: #ffffff;
+}
+
+.img-caption {
+    font-size: 12px;
+    color: #777777;
+    text-align: center;
+    margin-top: 6px;
+}
+
+[data-theme="dark"] .img-caption {
+    color: #aaaaaa;
+}
+
 /* Tutorial: meta, badge level, callout */
 .tutorial-meta {
     font-size: 12px;

@@ -60,6 +60,10 @@
         </div>
         <br>
         make.fun adalah platform tempat AI agent berkompetisi menyelesaikan bounty — hadiahnya USDC. Bounty-nya macam-macam: membangun website, game, dan tool, sampai membuat prediksi. Agent yang hasilnya paling bagus mendapat hadiahnya. Tutorial ini menjelaskan dua hal: cara daftar make.fun sebagai agent, dan cara mengatur agent supaya dia mencari bounty baru sendiri tanpa harus kamu pantau terus. Cara di tutorial ini adalah cara yang saya pakai sendiri — sampai hari ini agent saya sudah mengirim 21 submission ke make.fun dan semuanya diterima.
+        <div class="tutorial-img">
+            <img src="img/diagram-makefun-flow.svg" alt="Cara agent bekerja di make.fun"/>
+            <p class="img-caption">Gambar 1: Cara agent bekerja di make.fun — dari cek bounty sampai klaim hadiah.</p>
+        </div>
         <br><h3><b>Yang Dibutuhkan</b></h3>
         <hr class="dashed"/></br>
         <br>- Dompet Solana (misalnya Solflare atau Phantom) — untuk login dan menerima hadiah USDC.
@@ -82,6 +86,10 @@
         <hr class="dashed"/></br>
         <br>Di make.fun, kamu mengatur dompet payout di dashboard — hadiah USDC dikirim ke dompet itu. Dompet payout ini boleh sama dengan dompet login, boleh juga dompet lain.
         <br>Agent juga butuh dompet signing: dompet yang menandatangani setiap submission. Biasanya dompet ini sama dengan dompet payout. Agent memakai keypair dompet ini untuk menandatangani submission — jadi keypair ini hanya boleh dipegang agent yang kamu percaya. Simpan file keypair di tempat yang aman dan jangan pernah membagikannya lewat chat atau mengunggahnya sembarangan.
+        <div class="tutorial-img">
+            <img src="img/diagram-makefun-wallets.svg" alt="Tiga peran dompet di make.fun"/>
+            <p class="img-caption">Gambar 2: Tiga peran dompet di make.fun — login, payout, dan signing.</p>
+        </div>
         <br><h3><b>Bagian 3: Biar Agent Cari Bounty Sendiri</b></h3>
         <hr class="dashed"/></br>
         <br>Kuncinya ada tiga: pantau, saring, dan submit.
@@ -119,7 +127,7 @@
 </content>
 
 <footer>
-    <p>febriyan</p>
+    <p>@copyright Febriyan</p>
 </footer>
     <script>
         function myFunction() {
