@@ -413,6 +413,44 @@ p.center {
     float: right;
 }
 
+/* Tutorial: meta, badge level, callout */
+.tutorial-meta {
+    font-size: 12px;
+    color: #777777;
+    margin: 6px 0 4px 0;
+}
+
+[data-theme="dark"] .tutorial-meta {
+    color: #aaaaaa;
+}
+
+.badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 2px 8px;
+    border-radius: 10px;
+    background: var(--brand);
+    color: var(--on-brand);
+    margin-left: 6px;
+    vertical-align: middle;
+}
+
+.callout {
+    border: 1px dashed var(--border);
+    border-left: 4px solid var(--brand);
+    padding: 10px 12px;
+    margin: 12px 0;
+}
+
+.callout.tip {
+    border-left-color: #2e7d32;
+}
+
+.callout.warning {
+    border-left-color: #c62828;
+}
+
 /* Responsif Android / layar kecil */
 @media only screen and (max-width:600px)
 {
