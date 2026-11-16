@@ -264,18 +264,6 @@ footer {
     transition: background-color .3s ease;
 }
 
-.text-tentang {
-    width: 300px;
-    height: auto;
-    float: left;
-    text-align: justify;
-    border: 1px solid var(--on-brand);
-    line-height: 15px;
-    padding: 5px;
-    font-size: 11px;
-    color: var(--on-brand);
-}
-
 mark {
     background: var(--brand);
     color: var(--on-brand);
@@ -386,11 +374,6 @@ footer {
     height: auto;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
-}
-.text-tentang {
-    float: none;
-    width: auto;
-    margin-top: 10px;
 }
 .dec {
     display: none;
