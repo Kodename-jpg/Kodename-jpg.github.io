@@ -5,6 +5,18 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/style.css">
+    <script>
+        /* Terapkan tema (siang/malam) sebelum halaman digambar, biar tidak berkedip */
+        (function () {
+            try {
+                var t = localStorage.getItem('kodename-theme');
+                if (t !== 'light' && t !== 'dark') {
+                    t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                }
+                document.documentElement.setAttribute('data-theme', t);
+            } catch (e) {}
+        })();
+    </script>
 </head>
 
 <body>
@@ -27,6 +39,7 @@
             <a href="arsip.html">Arsip</a>
         </div>
     </div>
+    <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Ganti ke mode malam" title="Ganti ke mode malam">🌙</button>
 </nav>
 
 <content>
@@ -136,6 +149,7 @@
         </script>
 
     </div>
+    <script src="js/theme.js"></script>
 </body>
 
 </html>
