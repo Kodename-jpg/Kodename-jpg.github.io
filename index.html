@@ -1,10 +1,175 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-    <title>Redirect</title>
-    <meta http-equiv="refresh" content="0; url=instal-apache-mysql-php-phpmyadmin-di-archlinux.html">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kodename JPG — Tutorial Linux, Web &amp; AI Agent</title>
+    <meta name="description" content="Blog pribadi Febriyan: tutorial Linux, web, dan AI agent — ditulis dari pengalaman, gratis dan bisa langsung dipraktikkan.">
+    <meta property="og:title" content="Kodename JPG — Tutorial Linux, Web & AI Agent">
+    <meta property="og:description" content="Tutorial Linux, web, dan AI agent — ditulis dari pengalaman, gratis dan bisa langsung dipraktikkan.">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Bodoni:wght@500;600;700&family=Public+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        /* Terapkan tema (siang/malam) sebelum halaman digambar, biar tidak berkedip */
+        (function () {
+            try {
+                var t = localStorage.getItem('kodename-theme');
+                if (t !== 'light' && t !== 'dark') {
+                    t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                }
+                document.documentElement.setAttribute('data-theme', t);
+            } catch (e) {}
+        })();
+    </script>
 </head>
-<body>
 
+<body>
+<header class="topbar">
+    <div class="wrap topbar-inner">
+        <a class="brand" href="index.html" aria-label="Kodename JPG — Beranda">
+            <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><rect x="2" y="4" width="20" height="16" rx="3" stroke="currentColor" stroke-width="1.8"/><path d="m7 9 3 3-3 3M12 15h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span class="brand-name">Kodename JPG</span>
+        </a>
+        <nav class="mainnav" aria-label="Navigasi utama">
+            <button onclick="myFunction()" class="dropbtn menu-btn" type="button" aria-label="Buka menu" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>Menu</span></button>
+            <div id="myDropdown" class="dropdown-content nav-links">
+                <a href="index.html" class="active">Beranda</a>
+                <a href="tutorial.html">Tutorial</a>
+                <a href="arsip.html">Arsip</a>
+                <a href="tentang.html">Tentang</a>
+            </div>
+        </nav>
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Ganti ke mode malam" title="Ganti ke mode malam"><svg class="icon-moon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 13.5A8.5 8.5 0 0 1 10.5 4 8.5 8.5 0 1 0 20 13.5Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><svg class="icon-sun" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.8"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+    </div>
+</header>
+
+<div class="container">
+<main class="page">
+    <section class="hero">
+        <span class="hero-kicker">Blog pribadi Febriyan</span>
+        <h1>Belajar Linux, web, dan AI agent — lewat tutorial yang bisa langsung dipraktikkan.</h1>
+        <p class="hero-lead">Dengan mendokumentasikan ilmu dan insight yang saya dapatkan di blog, saya pun dapat belajar, mengulas, dan berbagi secara bersamaan.</p>
+        <div class="hero-cta">
+            <a class="btn btn-primary" href="tutorial.html">Lihat Tutorial →</a>
+            <a class="btn btn-ghost" href="tentang.html">Tentang Blog</a>
+        </div>
+        <div class="hero-stats">
+            <div class="stat"><b>4</b><span>Tutorial</span></div>
+            <div class="stat"><b>3</b><span>Topik</span></div>
+            <div class="stat"><b>Gratis</b><span>Semua tutorial</span></div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="section-head">
+            <div>
+                <span class="section-kicker">Terbaru</span>
+                <h2>Tutorial Terbaru</h2>
+            </div>
+            <a href="tutorial.html">Semua tutorial →</a>
+        </div>
+        <div class="card-grid">
+            <article class="card">
+                <p class="card-eyebrow">AI Agent · 17 Nov 2026</p>
+                <h3><a href="cara-daftar-make-fun-dengan-agent.html">Cara Daftar make.fun dengan Agent dan Biar Agent Cari Bounty Sendiri</a></h3>
+                <p>Cara daftar make.fun sebagai agent dan mengatur agent supaya mencari bounty baru sendiri.</p>
+                <div class="card-meta"><span class="badge intermediate">Menengah</span><a class="card-link" href="cara-daftar-make-fun-dengan-agent.html">Baca tutorial →</a></div>
+            </article>
+            <article class="card">
+                <p class="card-eyebrow">Web · 17 Nov 2026</p>
+                <h3><a href="cara-deploy-blog-statis-ke-github-pages.html">Cara Deploy Blog Statis ke GitHub Pages</a></h3>
+                <p>Cara hosting blog statis (HTML dan CSS saja) secara gratis di GitHub Pages.</p>
+                <div class="card-meta"><span class="badge beginner">Pemula</span><a class="card-link" href="cara-deploy-blog-statis-ke-github-pages.html">Baca tutorial →</a></div>
+            </article>
+            <article class="card">
+                <p class="card-eyebrow">Linux · 12 Jun 2021</p>
+                <h3><a href="konfigurasi-virtual-host-apache-server-di-archlinux.html">Konfigurasi Virtual Host Apache Server di ArchLinux</a></h3>
+                <p>Cara mengatur Virtual Host Apache di Arch Linux.</p>
+                <div class="card-meta"><span class="badge beginner">Pemula</span><a class="card-link" href="konfigurasi-virtual-host-apache-server-di-archlinux.html">Baca tutorial →</a></div>
+            </article>
+            <article class="card">
+                <p class="card-eyebrow">Linux · 2021</p>
+                <h3><a href="instal-apache-mysql-php-phpmyadmin-di-archlinux.html">Instal Apache, MySQL, PHP dan phpMyAdmin di Archlinux</a></h3>
+                <p>Cara instal dan konfigurasi Apache, MySQL, PHP, dan phpMyAdmin di Arch Linux.</p>
+                <div class="card-meta"><span class="badge beginner">Pemula</span><a class="card-link" href="instal-apache-mysql-php-phpmyadmin-di-archlinux.html">Baca tutorial →</a></div>
+            </article>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="section-head">
+            <div>
+                <span class="section-kicker">Topik</span>
+                <h2>Jelajahi berdasarkan topik</h2>
+            </div>
+        </div>
+        <div class="topic-grid">
+            <div class="topic">
+                <h3>Linux</h3>
+                <p>Instalasi dan konfigurasi server di Arch Linux — Apache, MySQL, PHP, dan Virtual Host.</p>
+            </div>
+            <div class="topic">
+                <h3>Web</h3>
+                <p>Hosting dan deploy blog statis gratis — dari file HTML sampai blog live di GitHub Pages.</p>
+            </div>
+            <div class="topic">
+                <h3>AI Agent</h3>
+                <p>Mendaftarkan AI agent di make.fun dan mengaturnya supaya mencari bounty sendiri.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-strip">
+        <div>
+            <span class="section-kicker">Tentang</span>
+            <h2>Catatan belajar, dibagikan apa adanya.</h2>
+            <p>Blog ini saya buat untuk tugas kuliah pemrograman web 1, sekaligus sebagai media online belajar saya. Sebagian besar isinya catatan yang berhubungan dengan teknologi komputer, khususnya Sistem Operasi GNU/Linux.</p>
+        </div>
+        <a class="btn btn-ghost" href="tentang.html">Baca selengkapnya →</a>
+    </section>
+</main>
+</div>
+
+<footer class="site-footer">
+    <div class="wrap footer-inner">
+        <div>
+            <p class="footer-name">Kodename JPG</p>
+            <p class="footer-tag">Tutorial Linux, web, dan AI agent — ditulis dari pengalaman, gratis dipraktikkan.</p>
+        </div>
+        <nav class="footer-nav" aria-label="Navigasi footer">
+            <a href="index.html">Beranda</a>
+            <a href="tutorial.html">Tutorial</a>
+            <a href="arsip.html">Arsip</a>
+            <a href="tentang.html">Tentang</a>
+        </nav>
+    </div>
+    <div class="wrap footer-bottom">
+        <p>© 2026 Febriyan · Kodename JPG</p>
+        <p>Dibuat dengan ❤️ oleh Febriyan</p>
+    </div>
+</footer>
+
+    <script>
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropbtn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="js/theme.js"></script>
 </body>
+
 </html>

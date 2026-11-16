@@ -1,11 +1,12 @@
-/* Mode siang/malam untuk blog Kodename-jpg.
+/* Mode siang/malam untuk blog Kodename JPG.
    - Tema disimpan di localStorage ('kodename-theme': 'light' | 'dark')
      jadi pilihan pengunjung bertahan antar halaman & kunjungan.
    - Kalau belum pernah memilih, mengikuti preferensi sistem
      (prefers-color-scheme).
    - Cuplikan kecil di <head> tiap halaman sudah memasang data-theme
-     sebelum halaman digambar (anti-kedip); skrip ini memasang ikon
-     tombol dan menangani klik. */
+     sebelum halaman digambar (anti-kedip); skrip ini memasang label
+     tombol dan menangani klik. Ikon matahari/bulan di tombol diganti
+     lewat CSS (lihat .theme-toggle di css/style.css). */
 (function () {
     var STORAGE_KEY = 'kodename-theme';
     var root = document.documentElement;
@@ -29,7 +30,6 @@
         var btn = document.getElementById('theme-toggle');
         if (btn) {
             var dark = theme === 'dark';
-            btn.textContent = dark ? '\u2600\uFE0F' : '\uD83C\uDF19';
             btn.setAttribute('aria-label', dark ? 'Ganti ke mode siang' : 'Ganti ke mode malam');
             btn.title = dark ? 'Ganti ke mode siang' : 'Ganti ke mode malam';
         }
