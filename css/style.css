@@ -18,8 +18,8 @@
     --code-accent: #0000ff;
     --dropbtn-bg: #fafafa;
     --dropbtn-text: #000000;
-    --dropdown-bg: #ff0000;
-    --dropdown-hover: #55557f;
+    --dropdown-bg: #55557f;
+    --dropdown-hover: #44446a;
     --shadow: rgba(0, 0, 0, 0.2);
 }
 
@@ -37,8 +37,8 @@
     --code-accent: #6a6aff;
     --dropbtn-bg: #3d3d5c;
     --dropbtn-text: #ffffff;
-    --dropdown-bg: #b30000;
-    --dropdown-hover: #2e2e4d;
+    --dropdown-bg: #2e2e4d;
+    --dropdown-hover: #23233a;
     --shadow: rgba(0, 0, 0, 0.5);
 }
 
