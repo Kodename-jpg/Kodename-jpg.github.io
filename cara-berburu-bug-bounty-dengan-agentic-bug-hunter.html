@@ -100,13 +100,13 @@ Agentic-Bug-Hunter adalah toolkit open-source untuk bug bounty: dari recon sampa
         </div>
         <br><h3><b>Bagian 2: Perintah-Perintah</b></h3>
         <hr class="dashed"/></br>
-        <br>Perintah utama CLI-nya ada 12. Semuanya dijalankan lewat <span class="c">bughunter</span> — flag global <span class="c">--provider</span>, <span class="c">--model</span>, dan <span class="c">--no-banner</span> bisa dipakai di semua perintah.
-        <br><b>Perintah dasar.</b> <span class="c">providers</span> menampilkan semua provider beserta statusnya (mana yang aktif, mana yang belum punya API key). <span class="c">models</span> menampilkan model yang tersedia untuk provider aktif. <span class="c">chat</span> membuka shell AI interaktif — cocok buat tanya-tanya soal target atau mendiskusikan temuan tanpa menjalankan pipeline penuh.
-        <br><b>recon &lt;target&gt; — recon dan analisis permukaan serangan.</b> Menjalankan pipeline recon lengkap lalu AI menganalisis permukaan serangannya: enumerasi subdomain, cek host yang hidup, kumpulkan URL, cari parameter, lalu scan nuclei. Hasilnya disimpan di folder <span class="c">recon/&lt;target&gt;/</span>.
+        <br>Perintah utama CLI-nya ada 12. Semuanya dijalankan lewat <code>bughunter</code> — flag global <code>--provider</code>, <code>--model</code>, dan <code>--no-banner</code> bisa dipakai di semua perintah.
+        <br><b>Perintah dasar.</b> <code>providers</code> menampilkan semua provider beserta statusnya (mana yang aktif, mana yang belum punya API key). <code>models</code> menampilkan model yang tersedia untuk provider aktif. <code>chat</code> membuka shell AI interaktif — cocok buat tanya-tanya soal target atau mendiskusikan temuan tanpa menjalankan pipeline penuh.
+        <br><b>recon &lt;target&gt; — recon dan analisis permukaan serangan.</b> Menjalankan pipeline recon lengkap lalu AI menganalisis permukaan serangannya: enumerasi subdomain, cek host yang hidup, kumpulkan URL, cari parameter, lalu scan nuclei. Hasilnya disimpan di folder <code>recon/&lt;target&gt;/</code>.
         <div class="c">
             bughunter recon target.com
         </div>
-        <br><b>hunt &lt;target&gt; — pipeline penuh.</b> Perintah utama: recon, cari kerentanan, validasi, sampai laporan, dalam satu jalan. Opsi <span class="c">--quick</span> menjalankan lebih sedikit cek — lebih cepat, cocok buat first pass.
+        <br><b>hunt &lt;target&gt; — pipeline penuh.</b> Perintah utama: recon, cari kerentanan, validasi, sampai laporan, dalam satu jalan. Opsi <code>--quick</code> menjalankan lebih sedikit cek — lebih cepat, cocok buat first pass.
         <div class="c">
             bughunter hunt target.com<br>
             bughunter hunt target.com --quick
@@ -125,7 +125,7 @@ Agentic-Bug-Hunter adalah toolkit open-source untuk bug bounty: dari recon sampa
         <div class="c">
             bughunter chain "XSS di halaman profil"
         </div>
-        <br><b>mcp — MCP server, doctor, dan katalog tool.</b> Tiga sub-perintah: <span class="c">serve</span> menjalankan MCP server supaya AI lain bisa memakai tool-tool bug hunter; <span class="c">doctor</span> memeriksa kesehatan setup MCP; <span class="c">tools</span> menampilkan katalog tool yang tersedia lewat MCP.
+        <br><b>mcp — MCP server, doctor, dan katalog tool.</b> Tiga sub-perintah: <code>serve</code> menjalankan MCP server supaya AI lain bisa memakai tool-tool bug hunter; <code>doctor</code> memeriksa kesehatan setup MCP; <code>tools</code> menampilkan katalog tool yang tersedia lewat MCP.
         <div class="c">
             bughunter mcp serve<br>
             bughunter mcp doctor<br>

@@ -698,6 +698,19 @@ hr.dashed {
     margin: 0;
 }
 
+/* Kode inline di dalam paragraf — JANGAN pakai .c di sini, .c itu
+   blok kode (margin + padding besar) dan akan jadi pil hitam raksasa. */
+code {
+    font-family: var(--font-mono);
+    font-size: .88em;
+    background: var(--surface-2);
+    color: var(--ink);
+    padding: 1px 6px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    white-space: nowrap;
+}
+
 .cc {
     text-align: left;
 }
