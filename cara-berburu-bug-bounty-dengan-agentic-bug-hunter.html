@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cara Berburu Bug Bounty dengan Agentic-Bug-Hunter (Gratis, AI Lokal) — Kodename JPG</title>
+    <meta name="description" content="Cara berburu bug bounty dengan Agentic-Bug-Hunter: perintah-perintahnya, alur kerja lengkap, dan batasannya — gratis dengan AI lokal lewat Ollama.">
+    <meta property="og:title" content="Cara Berburu Bug Bounty dengan Agentic-Bug-Hunter (Gratis, AI Lokal) — Kodename JPG">
+    <meta property="og:description" content="Cara berburu bug bounty dengan Agentic-Bug-Hunter: perintah-perintahnya, alur kerja lengkap, dan batasannya — gratis dengan AI lokal lewat Ollama.">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Bodoni:wght@500;600;700&family=Public+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        /* Terapkan tema (siang/malam) sebelum halaman digambar, biar tidak berkedip */
+        (function () {
+            try {
+                var t = localStorage.getItem('kodename-theme');
+                if (t !== 'light' && t !== 'dark') {
+                    t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                }
+                document.documentElement.setAttribute('data-theme', t);
+            } catch (e) {}
+        })();
+    </script>
+</head>
+
+<body>
+    <header class="topbar">
+    <div class="wrap topbar-inner">
+        <a class="brand" href="index.html" aria-label="Kodename JPG — Beranda">
+            <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><rect x="2" y="4" width="20" height="16" rx="3" stroke="currentColor" stroke-width="1.8"/><path d="m7 9 3 3-3 3M12 15h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span class="brand-name">Kodename JPG</span>
+        </a>
+        <nav class="mainnav" aria-label="Navigasi utama">
+            <button onclick="myFunction()" class="dropbtn menu-btn" type="button" aria-label="Buka menu" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>Menu</span></button>
+            <div id="myDropdown" class="dropdown-content nav-links">
+                <a href="index.html">Beranda</a>
+                <a href="tutorial.html" class="active">Tutorial</a>
+                <a href="arsip.html">Arsip</a>
+                <a href="tentang.html">Tentang</a>
+            </div>
+        </nav>
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Ganti ke mode malam" title="Ganti ke mode malam"><svg class="icon-moon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 13.5A8.5 8.5 0 0 1 10.5 4 8.5 8.5 0 1 0 20 13.5Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><svg class="icon-sun" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.8"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+    </div>
+</header>
+<div class="container">
+
+<main class="page">
+    <div class="content-box">
+        <br>
+        <h2><b>Cara Berburu Bug Bounty dengan Agentic-Bug-Hunter (Gratis, AI Lokal)</b></h2>
+        </br>
+        <p class="tutorial-meta">Ditulis: 18 Nov 2026 · Level: Menengah · Kategori: AI Agent</p>
+        <br><a href="index.html">Home</a> > <a href="tutorial.html">Tutorial</a> > Cara Berburu Bug Bounty dengan Agentic-Bug-Hunter (Gratis, AI Lokal)</br>
+        <button class="accordion">Daftar Artikel</button>
+        <div class="panel">
+            <b>Arsip</b>
+            <hr class="dashed"/><br>
+            <ul class="archive-list">
+                <li><a href="instal-apache-mysql-php-phpmyadmin-di-archlinux.html">Instal Apache, MySQL, PHP dan phpMyAdmin di Archlinux</a> <span class="archive-date">2021</span></li>
+                <li><a href="konfigurasi-virtual-host-apache-server-di-archlinux.html">Konfigurasi Virtual Host Apache Server Di ArchLinux</a> <span class="archive-date">12 Jun 2021</span></li>
+                <li><a href="cara-deploy-blog-statis-ke-github-pages.html">Cara Deploy Blog Statis ke GitHub Pages</a> <span class="archive-date">17 Nov 2026</span></li>
+                <li><a href="cara-daftar-make-fun-dengan-agent.html">Cara Daftar make.fun dengan Agent dan Biar Agent Cari Bounty Sendiri</a> <span class="archive-date">17 Nov 2026</span></li>
+                <li><a href="cara-berburu-bug-bounty-dengan-agentic-bug-hunter.html">Cara Berburu Bug Bounty dengan Agentic-Bug-Hunter (Gratis, AI Lokal)</a> <span class="archive-date">18 Nov 2026</span></li>
+            </ul>
+        </div>
+        <br>
+Agentic-Bug-Hunter adalah toolkit open-source untuk bug bounty: dari recon sampai laporan, semuanya dibantu AI dan bisa dijalankan dari terminal. Yang bikin menarik: tool ini bisa jalan sepenuhnya gratis dengan model AI lokal lewat Ollama — tanpa API key berbayar. Saya sudah mencoba sendiri pipeline-nya di target demo lokal, dan tutorial ini merangkum perintah-perintahnya beserta cara pakainya.
+        <div class="tutorial-img">
+            <img src="img/diagram-bughunter-flow.svg" alt="Alur berburu bug bounty"/>
+            <p class="img-caption">Gambar 1: Alur berburu bug bounty — dari scope sampai laporan.</p>
+        </div>
+        <div class="callout warning">
+            <b>Perhatian:</b> Hanya berburu target yang <b>in-scope</b> program bug bounty resmi (HackerOne, Bugcrowd, Intigriti, Immunefi). Baca dulu policy programnya sebelum menyentuh aset apa pun. Jangan pernah memindai situs yang bukan milik kamu atau yang tidak punya program bug bounty.
+        </div>
+        <br><h3><b>Yang Dibutuhkan</b></h3>
+        <hr class="dashed"/></br>
+        <br>- Python 3.11+ dan Git.
+        <br>- Ollama + model AI lokal (misalnya qwen2.5:3b) — gratis, tanpa API key.
+        <br>- Tool recon (subfinder, httpx, katana, nuclei) — sebagian besar ikut terpasang bersama repo.
+        <br><h3><b>Bagian 1: Instalasi dan Setup</b></h3>
+        <hr class="dashed"/></br>
+        <br><b>Langkah 1: Clone repo dan masuk ke virtual environment-nya.</b>
+        <div class="c">
+            git clone https://github.com/awarexone/Agentic-Bug-Hunter<br>
+            cd Agentic-Bug-Hunter
+        </div>
+        <br><b>Langkah 2: Atur provider dan model.</b> Perintah ini menyimpan pilihan kamu di config — jalankan sekali di awal. Yang saya pakai: Ollama + qwen2.5:3b (lokal, gratis).
+        <div class="c">
+            bughunter setup --provider ollama --model qwen2.5:3b
+        </div>
+        <br><b>Langkah 3: Cek status.</b> Perintah ini menampilkan provider dan model aktif, target yang sedang dikerjakan, dan sejauh mana progresnya.
+        <div class="c">
+            bughunter status
+        </div>
+        <div class="callout tip">
+            <b>Tips:</b> Kalau Ollama hilang setelah restart (binary-nya terhapus), install ulang binary-nya saja — model yang sudah di-download aman di folder model Ollama, tidak perlu download ulang.
+        </div>
+        <br><h3><b>Bagian 2: Perintah-Perintah</b></h3>
+        <hr class="dashed"/></br>
+        <br>Perintah utama CLI-nya ada 12. Semuanya dijalankan lewat <span class="c">bughunter</span> — flag global <span class="c">--provider</span>, <span class="c">--model</span>, dan <span class="c">--no-banner</span> bisa dipakai di semua perintah.
+        <br><b>Perintah dasar.</b> <span class="c">providers</span> menampilkan semua provider beserta statusnya (mana yang aktif, mana yang belum punya API key). <span class="c">models</span> menampilkan model yang tersedia untuk provider aktif. <span class="c">chat</span> membuka shell AI interaktif — cocok buat tanya-tanya soal target atau mendiskusikan temuan tanpa menjalankan pipeline penuh.
+        <br><b>recon &lt;target&gt; — recon dan analisis permukaan serangan.</b> Menjalankan pipeline recon lengkap lalu AI menganalisis permukaan serangannya: enumerasi subdomain, cek host yang hidup, kumpulkan URL, cari parameter, lalu scan nuclei. Hasilnya disimpan di folder <span class="c">recon/&lt;target&gt;/</span>.
+        <div class="c">
+            bughunter recon target.com
+        </div>
+        <br><b>hunt &lt;target&gt; — pipeline penuh.</b> Perintah utama: recon, cari kerentanan, validasi, sampai laporan, dalam satu jalan. Opsi <span class="c">--quick</span> menjalankan lebih sedikit cek — lebih cepat, cocok buat first pass.
+        <div class="c">
+            bughunter hunt target.com<br>
+            bughunter hunt target.com --quick
+        </div>
+        <br><b>validate [temuan] — 7-Question Gate.</b> Menguji satu temuan dengan tujuh pertanyaan (apakah ada PoC, apakah dampaknya konkret, apakah triager akan menganggapnya bug beneran, apakah in-scope, dan seterusnya). Hasilnya: KEEP (layak dilaporkan) atau DROP (buang). Jalankan ini untuk tiap temuan SEBELUM menulis laporan — laporan yang tidak valid merusak rasio validitas kamu di platform.
+        <div class="c">
+            bughunter validate "robots.txt membocorkan /admin dan /.env"
+        </div>
+        <br><b>triage [temuan] — triage cepat.</b> Alias cepat dari validate: penilaian singkat atas satu temuan, tanpa gate penuh. Dipakai saat ada banyak kandidat temuan dan kamu mau menyaring mana yang layak di-validate penuh.
+        <br><b>report — tulis laporan siap submit.</b> Menulis laporan bug yang siap disubmit ke platform (format HackerOne/Bugcrowd/Intigriti/Immunefi, lengkap dengan CVSS). Perintah ini tidak menerima argumen target — ia membaca folder findings yang sudah ada. Selalu baca dulu draft-nya sebelum submit; keputusan submit ada di tangan kamu, bukan tool.
+        <div class="c">
+            bughunter report<br>
+            bughunter report --findings-dir findings/target.com
+        </div>
+        <br><b>chain [temuan] — rangkai exploit A → B → C.</b> Mengambil satu temuan lalu merangkai rantai exploit — misalnya XSS, curi token, lalu ambil alih akun. Rantai seperti ini dampaknya jauh lebih besar daripada satu bug sendirian, dan biasanya dibayar lebih tinggi.
+        <div class="c">
+            bughunter chain "XSS di halaman profil"
+        </div>
+        <br><b>mcp — MCP server, doctor, dan katalog tool.</b> Tiga sub-perintah: <span class="c">serve</span> menjalankan MCP server supaya AI lain bisa memakai tool-tool bug hunter; <span class="c">doctor</span> memeriksa kesehatan setup MCP; <span class="c">tools</span> menampilkan katalog tool yang tersedia lewat MCP.
+        <div class="c">
+            bughunter mcp serve<br>
+            bughunter mcp doctor<br>
+            bughunter mcp tools
+        </div>
+        <br><h3><b>Bagian 3: Alur Kerja Lengkap</b></h3>
+        <hr class="dashed"/></br>
+        <br><b>Langkah 1: Scope.</b> Pastikan program dan asetnya in-scope — baca policy program dulu.
+        <br><b>Langkah 2: Recon.</b> Petakan permukaan serangan target.
+        <br><b>Langkah 3: Hunt.</b> Cari kerentanan di permukaan serangan itu.
+        <br><b>Langkah 4: Validasi tiap temuan</b> dengan 7-Question Gate — buang yang lemah.
+        <br><b>Langkah 5: Tulis laporan</b> dan baca draft-nya sebelum submit.
+        <div class="c">
+            bughunter recon target.com<br>
+            bughunter hunt target.com<br>
+            bughunter validate "temuan pertama"<br>
+            bughunter report
+        </div>
+        <br><h3><b>Batasan yang Perlu Diketahui</b></h3>
+        <hr class="dashed"/></br>
+        <br>- Target IP:port mentah (misalnya 127.0.0.1:8080) tidak bisa di-scan pipeline standar — recon menganggap target itu bukan host hidup sehingga scan-nya diam-diam tidak jalan. Solusinya: isi daftar URL manual lalu jalankan scanner langsung.
+        <br>- CLI hanya mencakup 7 keluarga cek: upload, SQLi, XSS, SSTI, CMS, MFA, SAML. Tidak dites: SSRF, open redirect, auth bypass, /.env exposure, CORS, LFI, IDOR, JWT, GraphQL — itu ada di slash command plugin, bukan CLI.
+        <br>- Model lokal lambat: qwen2.5:3b sekitar 5,7 token/detik setelah tuning — analisis 2000 token butuh sekitar 6 menit. Model ini juga kadang menghalusinasikan endpoint dari URL Wayback yang sampah — verifikasi setiap URL yang dikutip sebelum bertindak.
+        <br>- Nuclei butuh TMPDIR di luar /tmp — /tmp hanya tmpfs 512 MB sedangkan template nuclei sekitar 83 MB.
+        <br>- Target demo bawaan repo sudah di-hardening — scan yang benar menghasilkan nol temuan. Pakai hanya sebagai smoke test.
+        <br><h3><b>Referensi</b></h3>
+        <hr class="dashed"/></br>
+        <ol>
+            <li><a href="https://github.com/awarexone/Agentic-Bug-Hunter">https://github.com/awarexone/Agentic-Bug-Hunter</a></li>
+            <li><a href="https://www.hackerone.com/">https://www.hackerone.com/</a></li>
+            <li><a href="https://bugcrowd.com/">https://bugcrowd.com/</a></li>
+            <li><a href="https://www.intigriti.com/">https://www.intigriti.com/</a></li>
+            <li><a href="https://immunefi.com/">https://immunefi.com/</a></li>
+        </ol>
+        <hr class="dashed"/>
+        <div class="article-nav">
+            <a class="prev" href="cara-daftar-make-fun-dengan-agent.html">&larr; Artikel sebelumnya</a>
+        </div>
+    </div>
+</main>
+
+
+    <script>
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropbtn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+        </script>
+        <script>
+            var acc = document.getElementsByClassName("accordion");
+            var i
+            for (i = 0; i < acc.length; i++){
+                acc[i].onclick = function(){
+                    this.classList.toggle("active");
+                    this.nextElementSibling.classList.toggle("show");
+                }
+            }
+        </script>
+
+    </div>
+<footer class="site-footer">
+    <div class="wrap footer-inner">
+        <div>
+            <p class="footer-name">Kodename JPG</p>
+            <p class="footer-tag">Tutorial Linux, web, dan AI agent — ditulis dari pengalaman, gratis dipraktikkan.</p>
+        </div>
+        <nav class="footer-nav" aria-label="Navigasi footer">
+            <a href="index.html">Beranda</a>
+            <a href="tutorial.html">Tutorial</a>
+            <a href="arsip.html">Arsip</a>
+            <a href="tentang.html">Tentang</a>
+        </nav>
+    </div>
+    <div class="wrap footer-bottom">
+        <p>© 2026 Febriyan · Kodename JPG</p>
+        <p>Dibuat dengan ❤️ oleh Febriyan</p>
+    </div>
+</footer>
+    <script src="js/theme.js"></script>
+</body>
+
+</html>
