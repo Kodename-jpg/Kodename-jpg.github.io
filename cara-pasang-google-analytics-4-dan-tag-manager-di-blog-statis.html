@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TKZ69BJN');</script>
+    <!-- End Google Tag Manager -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-E8PLTTEFKX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-E8PLTTEFKX');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cara Pasang Google Analytics 4 dan Tag Manager di Blog Statis — Kodename JPG</title>
+    <meta name="description" content="Cara pasang Google Analytics 4 (GA4) dan Google Tag Manager (GTM) di blog statis: dari buat properti sampai data muncul di Realtime.">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Febriyan">
+    <link rel="canonical" href="https://kodename-jpg.github.io/cara-pasang-google-analytics-4-dan-tag-manager-di-blog-statis.html">
+    <!-- TODO AdSense: tempel kode verifikasi AdSense (ca-pub-...) di sini setelah akun disetujui. Jangan isi ID palsu. -->
+    <meta property="og:title" content="Cara Pasang Google Analytics 4 dan Tag Manager di Blog Statis — Kodename JPG">
+    <meta property="og:description" content="Cara pasang Google Analytics 4 (GA4) dan Google Tag Manager (GTM) di blog statis: dari buat properti sampai data muncul di Realtime.">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Kodename JPG">
+    <meta property="og:url" content="https://kodename-jpg.github.io/cara-pasang-google-analytics-4-dan-tag-manager-di-blog-statis.html">
+    <meta property="og:image" content="https://kodename-jpg.github.io/img/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Kodename JPG — Tutorial Linux, Web & AI Agent">
+    <meta property="og:locale" content="id_ID">
+    <meta property="article:published_time" content="2026-11-26">
+    <meta property="article:modified_time" content="2026-11-26">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Bodoni:wght@500;600;700&family=Public+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        /* Terapkan tema (siang/malam) sebelum halaman digambar, biar tidak berkedip */
+        (function () {
+            try {
+                var t = localStorage.getItem('kodename-theme');
+                if (t !== 'light' && t !== 'dark') {
+                    t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                }
+                document.documentElement.setAttribute('data-theme', t);
+            } catch (e) {}
+        })();
+    </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Cara Pasang Google Analytics 4 dan Tag Manager di Blog Statis",
+  "description": "Cara pasang Google Analytics 4 (GA4) dan Google Tag Manager (GTM) di blog statis: dari buat properti sampai data muncul di Realtime.",
+  "url": "https://kodename-jpg.github.io/cara-pasang-google-analytics-4-dan-tag-manager-di-blog-statis.html",
+  "datePublished": "2026-11-26",
+  "dateModified": "2026-11-26",
+  "inLanguage": "id",
+  "author": {
+    "@type": "Person",
+    "name": "Febriyan",
+    "url": "https://github.com/Kodename-jpg"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Kodename JPG",
+    "url": "https://kodename-jpg.github.io"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://kodename-jpg.github.io/cara-pasang-google-analytics-4-dan-tag-manager-di-blog-statis.html"
+  }
+}
+</script>
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TKZ69BJN"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <header class="topbar">
+    <div class="wrap topbar-inner">
+        <a class="brand" href="/" aria-label="Kodename JPG — Beranda">
+            <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><rect x="2" y="4" width="20" height="16" rx="3" stroke="currentColor" stroke-width="1.8"/><path d="m7 9 3 3-3 3M12 15h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span class="brand-name">Kodename JPG</span>
+        </a>
+        <nav class="mainnav" aria-label="Navigasi utama">
+            <button onclick="myFunction()" class="dropbtn menu-btn" type="button" aria-label="Buka menu" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>Menu</span></button>
+            <div id="myDropdown" class="dropdown-content nav-links">
+                <a href="/">Beranda</a>
+                <a href="/tutorial.html" class="active">Tutorial</a>
+                <a href="/arsip.html">Arsip</a>
+                <a href="/tentang.html">Tentang</a>
+            </div>
+        </nav>
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Ganti ke mode malam" title="Ganti ke mode malam"><svg class="icon-moon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 13.5A8.5 8.5 0 0 1 10.5 4 8.5 8.5 0 1 0 20 13.5Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><svg class="icon-sun" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.8"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+    </div>
+</header>
+<div class="container">
+
+<main class="page">
+    <div class="content-box">
+        <br>
+        <h1><b>Cara Pasang Google Analytics 4 dan Tag Manager di Blog Statis</b></h1>
+        </br>
+        <p class="tutorial-meta">Ditulis: 26 Nov 2026 · Level: Pemula · Kategori: Web</p>
+        <br><a href="/">Home</a> > <a href="/tutorial.html">Tutorial</a> > Cara Pasang Google Analytics 4 dan Tag Manager di Blog Statis</br>
+        <button class="accordion">Daftar Artikel</button>
+        <div class="panel">
+            <b>Arsip</b>
+            <hr class="dashed"/><br>
+            <ul class="archive-list">
+                <li><a href="/instal-apache-mysql-php-phpmyadmin-di-archlinux.html">Instal Apache MySQL PHP phpMyAdmin di Archlinux</a> <span class="archive-date">2021</span></li>
+                <li><a href="/konfigurasi-virtual-host-apache-server-di-archlinux.html">Konfigurasi Virtual Host Apache Server Di ArchLinux</a> <span class="archive-date">12 Jun 2021</span></li>
+                <li><a href="/cara-deploy-blog-statis-ke-github-pages.html">Cara Deploy Blog Statis ke GitHub Pages</a> <span class="archive-date">17 Nov 2026</span></li>
+                <li><a href="/cara-daftar-make-fun-dengan-agent.html">Cara Daftar make.fun dengan Agent</a> <span class="archive-date">17 Nov 2026</span></li>
+                <li><a href="/cara-berburu-bug-bounty-dengan-agentic-bug-hunter.html">Cara Berburu Bug Bounty dengan Agentic-Bug-Hunter</a> <span class="archive-date">18 Nov 2026</span></li>
+                <li><a href="/cara-pasang-google-analytics-4-dan-tag-manager-di-blog-statis.html">Cara Pasang Google Analytics 4 dan Tag Manager di Blog Statis</a> <span class="archive-date">26 Nov 2026</span></li>
+                <li><a href="/cara-optimasi-seo-blog-github-pages.html">Cara Optimasi SEO Blog GitHub Pages</a> <span class="archive-date">26 Nov 2026</span></li>
+                <li><a href="/cara-ikut-bounty-make-fun-pakai-ai-agent.html">Cara Ikut Bounty make.fun Pakai AI Agent</a> <span class="archive-date">26 Nov 2026</span></li>
+                <li><a href="/cara-bikin-bot-tank-battle-training.html">Cara Bikin Bot Tank di battle.training</a> <span class="archive-date">26 Nov 2026</span></li>
+                <li><a href="/cara-bikin-usb-bootable-ventoy.html">Cara Bikin USB Bootable Ventoy</a> <span class="archive-date">26 Nov 2026</span></li>
+            </ul>
+        </div>
+        <br>
+        Google Analytics 4 (GA4) adalah alat gratis dari Google untuk melihat pengunjung blog kamu: berapa orang yang datang, dari mana mereka berasal, dan halaman apa yang mereka baca. Google Tag Manager (GTM) adalah alat gratis untuk memasang kode pelacak seperti GA4 tanpa harus mengedit file blog setiap kali. Tutorial ini memasang keduanya di blog statis — cukup sekali pasang, data langsung mengalir.
+        <div class="tutorial-img">
+            <img src="img/diagram-ga4-gtm-flow.svg" alt="Alur pasang Google Analytics 4 dan Google Tag Manager di blog statis: buat properti GA4, buat container GTM, pasang snippet, lalu cek data di Realtime"/>
+            <p class="img-caption">Gambar 1: Alur pasang GA4 dan GTM di blog statis — dari buat properti sampai data muncul di Realtime.</p>
+        </div>
+        <br><h2><b>Yang Dibutuhkan</b></h2>
+        <hr class="dashed"/></br>
+        <br>- Akun Google (gratis).
+        <br>- Blog statis yang sudah online, misalnya di GitHub Pages.
+        <br>- Akses untuk mengedit file HTML blog kamu.
+        <br>- Browser.
+        <br><h2><b>Langkah 1: Buat Properti Google Analytics 4</b></h2>
+        <hr class="dashed"/></br>
+        <br>Buka <a href="https://analytics.google.com" target="_blank" rel="noopener">analytics.google.com</a> dan login dengan akun Google kamu. Klik <b>Admin</b> di kiri bawah, lalu pilih <b>Create → Property</b>. Isi nama properti (misalnya nama blog kamu), pilih zona waktu <b>Asia/Jakarta</b> dan mata uang <b>IDR</b>, lalu lanjutkan. Pilih platform <b>Web</b>, isi URL blog kamu (misalnya <code>https://username.github.io</code>) dan nama stream, lalu klik <b>Create stream</b>. Setelah itu kamu akan melihat <b>Measurement ID</b> — kodenya berbentuk <code>G-XXXXXXXXXX</code>. Salin dan simpan dulu.
+        <div class="callout tip">
+            <b>Tips:</b> Measurement ID di blog ini adalah <code>G-E8PLTTEFKX</code> — tapi itu ID blog ini. Kamu harus pakai ID dari properti kamu sendiri, jangan salin ID contoh ini.
+        </div>
+        <br><h2><b>Langkah 2: Buat Container Google Tag Manager</b></h2>
+        <hr class="dashed"/></br>
+        <br>Buka <a href="https://tagmanager.google.com" target="_blank" rel="noopener">tagmanager.google.com</a> dan login dengan akun Google yang sama. Klik <b>Create Account</b>, isi nama akun dan nama container (misalnya nama blog kamu), pilih Target Platform <b>Web</b>, lalu klik <b>Create</b>. Setelah container dibuat, kamu akan melihat <b>Container ID</b> — kodenya berbentuk <code>GTM-XXXXXXX</code>. Salin dan simpan.
+        <div class="callout tip">
+            <b>Tips:</b> Container ID di blog ini adalah <code>GTM-TKZ69BJN</code> — sama seperti Measurement ID, itu contoh dari blog ini. Pakai Container ID dari container kamu sendiri.
+        </div>
+        <br><h2><b>Langkah 3: Pasang Snippet di Semua Halaman</b></h2>
+        <hr class="dashed"/></br>
+        <br>Ada dua snippet yang harus dipasang di setiap halaman HTML blog kamu. Pertama, snippet GTM — tempel tepat setelah tag <code>&lt;head&gt;</code>:
+        <div class="c">
+            &lt;!-- Google Tag Manager --&gt;<br>
+            &lt;script&gt;(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':<br>
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],<br>
+            j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=<br>
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);<br>
+            })(window,document,'script','dataLayer','GTM-TKZ69BJN');&lt;/script&gt;<br>
+            &lt;!-- End Google Tag Manager --&gt;
+        </div>
+        <br>Kedua, snippet noscript GTM — tempel tepat setelah tag <code>&lt;body&gt;</code>:
+        <div class="c">
+            &lt;!-- Google Tag Manager (noscript) --&gt;<br>
+            &lt;noscript&gt;&lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TKZ69BJN"<br>
+            height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;&lt;/noscript&gt;<br>
+            &lt;!-- End Google Tag Manager (noscript) --&gt;
+        </div>
+        <br>Ketiga, snippet gtag.js untuk GA4 — tempel juga di dalam <code>&lt;head&gt;</code>, di bawah snippet GTM:
+        <div class="c">
+            &lt;!-- Google tag (gtag.js) --&gt;<br>
+            &lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-E8PLTTEFKX"&gt;&lt;/script&gt;<br>
+            &lt;script&gt;<br>
+            &nbsp;&nbsp;window.dataLayer = window.dataLayer || [];<br>
+            &nbsp;&nbsp;function gtag(){dataLayer.push(arguments);}<br>
+            &nbsp;&nbsp;gtag('js', new Date());<br>
+            <br>
+            &nbsp;&nbsp;gtag('config', 'G-E8PLTTEFKX');<br>
+            &lt;/script&gt;
+        </div>
+        <div class="callout tip">
+            <b>Tips:</b> Ganti <code>G-E8PLTTEFKX</code> dengan Measurement ID kamu sendiri, dan <code>GTM-TKZ69BJN</code> dengan Container ID kamu sendiri. Kalau blog kamu punya banyak halaman, snippet harus ada di semua halaman — halaman yang tidak dipasangi snippet tidak akan tercatat pengunjungnya.
+        </div>
+        <br><h2><b>Langkah 4: Cek Data di Realtime</b></h2>
+        <hr class="dashed"/></br>
+        <br>Simpan dan upload semua file HTML yang sudah diubah, lalu tunggu 1-2 menit sampai blog kamu ter-update. Buka <a href="https://analytics.google.com" target="_blank" rel="noopener">analytics.google.com</a>, masuk ke properti kamu, lalu pilih <b>Reports → Realtime</b>. Buka blog kamu di tab browser lain — dalam 1-2 menit, angka pengguna aktif di Realtime akan berubah menjadi 1. Itu tandanya GA4 sudah mencatat kunjungan.
+        <div class="tutorial-img">
+            <img src="img/diagram-ga4-realtime.svg" alt="Ilustrasi halaman Realtime Google Analytics yang menampilkan 1 pengguna aktif saat ini dan grafik kunjungan 30 menit terakhir"/>
+            <p class="img-caption">Gambar 2: Cek data di Realtime — buka blog di tab lain, angka pengguna aktif berubah dalam 1-2 menit.</p>
+        </div>
+        <div class="callout tip">
+            <b>Tips:</b> Laporan standar seperti jumlah pengunjung harian dan halaman yang paling sering dibaca baru muncul 24-48 jam setelah pemasangan. Jadi jangan panik kalau laporan biasa masih kosong di hari pertama — cek Realtime dulu.
+        </div>
+        <div class="callout warning">
+            <b>Perhatian:</b> Jangan pasang tag GA4 di dalam GTM kalau kamu sudah memasang gtag.js langsung seperti di tutorial ini. Dua-duanya mengirim pageview yang sama, jadi satu kunjungan akan kehitung dobel.
+        </div>
+        <br><h2><b>Kalau Data Tidak Muncul</b></h2>
+        <hr class="dashed"/></br>
+        <br>- Cek Measurement ID dan Container ID — pastikan keduanya benar dan milik properti/container kamu sendiri, bukan contoh dari tutorial ini.
+        <br>- Cek snippet ada di semua halaman — buka View Source di browser (Ctrl+U) dan cari <code>G-</code> dan <code>GTM-</code>.
+        <br>- Matikan ad blocker saat mengetes — beberapa ad blocker memblokir Google Analytics, jadi data tidak terkirim.
+        <br>- Tunggu dulu — blog yang baru di-deploy butuh 1-2 menit sampai file barunya tampil, dan Realtime butuh 1-2 menit untuk menampilkan kunjungan.
+        <br><h2><b>Referensi</b></h2>
+        <hr class="dashed"/></br>
+        <ol>
+            <li><a href="https://support.google.com/analytics/answer/9304153">https://support.google.com/analytics/answer/9304153</a></li>
+            <li><a href="https://support.google.com/tagmanager/answer/6103696">https://support.google.com/tagmanager/answer/6103696</a></li>
+        </ol>
+        <hr class="dashed"/>
+        <div class="support-box">
+            <p><b>Suka tutorial ini?</b> Dukung penulis biar makin banyak tutorial gratis.</p>
+            <a class="btn btn-primary" href="https://saweria.co/Febri007" target="_blank" rel="noopener">Dukung via Saweria</a>
+        </div>
+        <div class="article-nav">
+            <a class="prev" href="/cara-daftar-make-fun-dengan-agent.html">&larr; Artikel sebelumnya</a>
+            <a class="next" href="/cara-optimasi-seo-blog-github-pages.html">Artikel berikutnya &rarr;</a>
+        </div>
+    </div>
+</main>
+
+
+    <script>
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropbtn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+        </script>
+        <script>
+            var acc = document.getElementsByClassName("accordion");
+            var i
+            for (i = 0; i < acc.length; i++){
+                acc[i].onclick = function(){
+                    this.classList.toggle("active");
+                    this.nextElementSibling.classList.toggle("show");
+                }
+            }
+        </script>
+
+    </div>
+<footer class="site-footer">
+    <div class="wrap footer-inner">
+        <div>
+            <p class="footer-name">Kodename JPG</p>
+            <p class="footer-tag">Tutorial Linux, web, dan AI agent — ditulis dari pengalaman, gratis dipraktikkan.</p>
+        </div>
+        <nav class="footer-nav" aria-label="Navigasi footer">
+            <a href="/">Beranda</a>
+            <a href="/tutorial.html">Tutorial</a>
+            <a href="/arsip.html">Arsip</a>
+            <a href="/tentang.html">Tentang</a>
+        </nav>
+    </div>
+    <div class="wrap footer-bottom">
+        <p>© 2026 Febriyan · Kodename JPG · <a href="/privasi.html">Privasi</a> · <a href="/syarat.html">Syarat</a> · <a href="https://saweria.co/Febri007" target="_blank" rel="noopener">Dukung via Saweria</a></p>
+    </div>
+</footer>
+    <script src="js/theme.js"></script>
+</body>
+
+</html>
