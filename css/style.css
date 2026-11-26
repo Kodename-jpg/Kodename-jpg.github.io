@@ -1015,3 +1015,33 @@ p.center {
         animation: none !important;
     }
 }
+
+/* ---------- Language switcher (pola bilingual: BILINGUAL-PATTERN.md) ---------- */
+
+.lang-switch {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-left: auto;
+    font-size: 14px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.lang-switch a {
+    color: var(--ink);
+    text-decoration: none;
+}
+
+.lang-switch a:hover {
+    color: var(--accent);
+    text-decoration: underline;
+}
+
+.lang-switch .lang-active {
+    opacity: .5;
+}
+
+.lang-switch .lang-sep {
+    opacity: .35;
+}

@@ -24,6 +24,9 @@
     <meta name="robots" content="index, follow">
     <meta name="author" content="Febriyan">
     <link rel="canonical" href="https://kodename-jpg.github.io/tutorial.html">
+    <link rel="alternate" hreflang="id" href="https://kodename-jpg.github.io/tutorial.html">
+    <link rel="alternate" hreflang="en" href="https://kodename-jpg.github.io/en/tutorial.html">
+    <link rel="alternate" hreflang="x-default" href="https://kodename-jpg.github.io/tutorial.html">
     <!-- TODO AdSense: tempel kode verifikasi AdSense (ca-pub-...) di sini setelah akun disetujui. Jangan isi ID palsu. -->
     <meta property="og:title" content="Tutorial — Kodename JPG">
     <meta property="og:description" content="Kumpulan tutorial Linux, web, dan AI agent dari Febriyan — gratis dan bisa langsung dipraktikkan.">
@@ -51,6 +54,20 @@
             } catch (e) {}
         })();
     </script>
+<script>
+/* Auto-detect bahasa: arahkan ke versi Inggris bila browser bukan Indonesia */
+(function () {
+    try {
+        if (new URLSearchParams(location.search).get('lang')) return;
+        if (localStorage.getItem('site-lang')) return;
+        var lang = (navigator.language || navigator.userLanguage || 'id').toLowerCase();
+        if (lang.indexOf('id') !== 0 && lang.indexOf('in') !== 0) {
+            var path = location.pathname.replace(/^\//, '');
+            location.replace('/en/' + path);
+        }
+    } catch (e) {}
+})();
+</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -89,6 +106,7 @@
             </div>
         </nav>
         <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Ganti ke mode malam" title="Ganti ke mode malam"><svg class="icon-moon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 13.5A8.5 8.5 0 0 1 10.5 4 8.5 8.5 0 1 0 20 13.5Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><svg class="icon-sun" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.8"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+        <div class="lang-switch" role="group" aria-label="Pilih bahasa"><span class="lang-active" aria-current="true">ID</span><span class="lang-sep" aria-hidden="true">|</span><a href="/en/tutorial.html" lang="en" onclick="try{localStorage.setItem('site-lang','en')}catch(e){}">EN</a></div>
     </div>
 </header>
 <div class="container">
