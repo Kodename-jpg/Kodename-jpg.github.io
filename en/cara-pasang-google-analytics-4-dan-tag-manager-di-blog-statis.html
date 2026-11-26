@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TKZ69BJN');</script>
+    <!-- End Google Tag Manager -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-E8PLTTEFKX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-E8PLTTEFKX');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>How to Install Google Analytics 4 and Tag Manager on a Static Blog — Kodename JPG</title>
+    <meta name="description" content="How to install Google Analytics 4 (GA4) and Google Tag Manager (GTM) on a static blog: from creating a property to seeing data in Realtime.">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Febriyan">
+    <link rel="canonical" href="https://kodename-jpg.github.io/en/cara-pasang-google-analytics-4-dan-tag-manager-di-blog-statis.html">
+    <link rel="alternate" hreflang="id" href="https://kodename-jpg.github.io/cara-pasang-google-analytics-4-dan-tag-manager-di-blog-statis.html">
+    <link rel="alternate" hreflang="en" href="https://kodename-jpg.github.io/en/cara-pasang-google-analytics-4-dan-tag-manager-di-blog-statis.html">
+    <link rel="alternate" hreflang="x-default" href="https://kodename-jpg.github.io/cara-pasang-google-analytics-4-dan-tag-manager-di-blog-statis.html">
+    <!-- TODO AdSense: tempel kode verifikasi AdSense (ca-pub-...) di sini setelah akun disetujui. Jangan isi ID palsu. -->
+    <meta property="og:title" content="How to Install Google Analytics 4 and Tag Manager on a Static Blog — Kodename JPG">
+    <meta property="og:description" content="How to install Google Analytics 4 (GA4) and Google Tag Manager (GTM) on a static blog: from creating a property to seeing data in Realtime.">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Kodename JPG">
+    <meta property="og:url" content="https://kodename-jpg.github.io/en/cara-pasang-google-analytics-4-dan-tag-manager-di-blog-statis.html">
+    <meta property="og:image" content="https://kodename-jpg.github.io/img/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Kodename JPG — Linux, Web & AI Agent Tutorials">
+    <meta property="og:locale" content="en_US">
+    <meta property="article:published_time" content="2026-11-26">
+    <meta property="article:modified_time" content="2026-11-26">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Bodoni:wght@500;600;700&family=Public+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <script>
+        /* Terapkan tema (siang/malam) sebelum halaman digambar, biar tidak berkedip */
+        (function () {
+            try {
+                var t = localStorage.getItem('kodename-theme');
+                if (t !== 'light' && t !== 'dark') {
+                    t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                }
+                document.documentElement.setAttribute('data-theme', t);
+            } catch (e) {}
+        })();
+    </script>
+<script>
+/* Auto-detect language: redirect to the Indonesian version for Indonesian browsers */
+(function () {
+    try {
+        if (new URLSearchParams(location.search).get('lang')) return;
+        if (localStorage.getItem('site-lang')) return;
+        var lang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+        if (lang.indexOf('id') === 0 || lang.indexOf('in') === 0) {
+            var path = location.pathname.replace(/^\/en\//, '');
+            location.replace('/' + path);
+        }
+    } catch (e) {}
+})();
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "How to Install Google Analytics 4 and Tag Manager on a Static Blog",
+  "description": "How to install Google Analytics 4 (GA4) and Google Tag Manager (GTM) on a static blog: from creating a property to seeing data in Realtime.",
+  "url": "https://kodename-jpg.github.io/en/cara-pasang-google-analytics-4-dan-tag-manager-di-blog-statis.html",
+  "datePublished": "2026-11-26",
+  "dateModified": "2026-11-26",
+  "inLanguage": "en",
+  "author": {
+    "@type": "Person",
+    "name": "Febriyan",
+    "url": "https://github.com/Kodename-jpg"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Kodename JPG",
+    "url": "https://kodename-jpg.github.io"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://kodename-jpg.github.io/en/cara-pasang-google-analytics-4-dan-tag-manager-di-blog-statis.html"
+  }
+}
+</script>
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TKZ69BJN"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <header class="topbar">
+    <div class="wrap topbar-inner">
+        <a class="brand" href="/en/" aria-label="Kodename JPG — Home">
+            <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><rect x="2" y="4" width="20" height="16" rx="3" stroke="currentColor" stroke-width="1.8"/><path d="m7 9 3 3-3 3M12 15h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span class="brand-name">Kodename JPG</span>
+        </a>
+        <nav class="mainnav" aria-label="Main navigation">
+            <button onclick="myFunction()" class="dropbtn menu-btn" type="button" aria-label="Open menu" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>Menu</span></button>
+            <div id="myDropdown" class="dropdown-content nav-links">
+                <a href="/en/">Home</a>
+                <a href="/en/tutorial.html" class="active">Tutorial</a>
+                <a href="/en/arsip.html">Archive</a>
+                <a href="/en/tentang.html">About</a>
+            </div>
+        </nav>
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode"><svg class="icon-moon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 13.5A8.5 8.5 0 0 1 10.5 4 8.5 8.5 0 1 0 20 13.5Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><svg class="icon-sun" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.8"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+        <div class="lang-switch" role="group" aria-label="Choose language"><a href="/cara-pasang-google-analytics-4-dan-tag-manager-di-blog-statis.html" lang="id" onclick="try{localStorage.setItem('site-lang','id')}catch(e){}">ID</a><span class="lang-sep" aria-hidden="true">|</span><span class="lang-active" aria-current="true">EN</span></div>
+    </div>
+</header>
+<div class="container">
+
+<main class="page">
+    <div class="content-box">
+        <br>
+        <h1><b>How to Install Google Analytics 4 and Tag Manager on a Static Blog</b></h1>
+        </br>
+        <p class="tutorial-meta">Written: Nov 26, 2026 · Level: Beginner · Category: Web</p>
+        <br><a href="/en/">Home</a> > <a href="/en/tutorial.html">Tutorial</a> > How to Install Google Analytics 4 and Tag Manager on a Static Blog</br>
+        <button class="accordion">Article List</button>
+        <div class="panel">
+            <b>Archive</b>
+            <hr class="dashed"/><br>
+            <ul class="archive-list">
+                <li><a href="/en/instal-apache-mysql-php-phpmyadmin-di-archlinux.html">Installing Apache, MySQL, PHP, and phpMyAdmin on Arch Linux</a> <span class="archive-date">2021</span></li>
+                <li><a href="/en/konfigurasi-virtual-host-apache-server-di-archlinux.html">Configuring an Apache Virtual Host on Arch Linux</a> <span class="archive-date">Jun 12, 2021</span></li>
+                <li><a href="/en/cara-deploy-blog-statis-ke-github-pages.html">How to Deploy a Static Blog to GitHub Pages</a> <span class="archive-date">Nov 17, 2026</span></li>
+                <li><a href="/en/cara-daftar-make-fun-dengan-agent.html">How to Sign Up for make.fun with an Agent</a> <span class="archive-date">Nov 17, 2026</span></li>
+                <li><a href="/en/cara-berburu-bug-bounty-dengan-agentic-bug-hunter.html">How to Hunt Bug Bounties with Agentic-Bug-Hunter</a> <span class="archive-date">Nov 18, 2026</span></li>
+                <li><a href="/en/cara-pasang-google-analytics-4-dan-tag-manager-di-blog-statis.html">How to Install Google Analytics 4 and Tag Manager on a Static Blog</a> <span class="archive-date">Nov 26, 2026</span></li>
+                <li><a href="/en/cara-optimasi-seo-blog-github-pages.html">How to Optimize SEO for a GitHub Pages Blog</a> <span class="archive-date">Nov 26, 2026</span></li>
+                <li><a href="/en/cara-ikut-bounty-make-fun-pakai-ai-agent.html">How to Join make.fun Bounties with an AI Agent</a> <span class="archive-date">Nov 26, 2026</span></li>
+                <li><a href="/en/cara-bikin-bot-tank-battle-training.html">How to Build a Tank Bot on battle.training</a> <span class="archive-date">Nov 26, 2026</span></li>
+                <li><a href="/en/cara-bikin-usb-bootable-ventoy.html">How to Make a Bootable Ventoy USB</a> <span class="archive-date">Nov 26, 2026</span></li>
+            </ul>
+        </div>
+        <br>
+        Google Analytics 4 (GA4) is a free Google tool for seeing your blog's visitors: how many people come, where they come from, and which pages they read. Google Tag Manager (GTM) is a free tool for installing tracking code like GA4 without having to edit your blog files every time. This tutorial installs both on a static blog — install once, and the data flows right away.
+        <div class="tutorial-img">
+            <img src="/img/en/diagram-ga4-gtm-flow.svg" alt="The flow of installing Google Analytics 4 and Google Tag Manager on a static blog: create a GA4 property, create a GTM container, install the snippets, then check the data in Realtime"/>
+            <p class="img-caption">Figure 1: The flow of installing GA4 and GTM on a static blog — from creating a property to seeing data in Realtime.</p>
+        </div>
+        <br><h2><b>What You Need</b></h2>
+        <hr class="dashed"/></br>
+        <br>- A Google account (free).
+        <br>- A static blog that's already online, for example on GitHub Pages.
+        <br>- Access to edit your blog's HTML files.
+        <br>- A browser.
+        <br><h2><b>Step 1: Create a Google Analytics 4 Property</b></h2>
+        <hr class="dashed"/></br>
+        <br>Open <a href="https://analytics.google.com" target="_blank" rel="noopener">analytics.google.com</a> and sign in with your Google account. Click <b>Admin</b> at the bottom left, then choose <b>Create → Property</b>. Fill in the property name (your blog's name, for example), choose the <b>Asia/Jakarta</b> time zone and the <b>IDR</b> currency, then continue. Choose the <b>Web</b> platform, fill in your blog's URL (for example <code>https://username.github.io</code>) and the stream name, then click <b>Create stream</b>. After that you'll see your <b>Measurement ID</b> — the code looks like <code>G-XXXXXXXXXX</code>. Copy it and save it for now.
+        <div class="callout tip">
+            <b>Tip:</b> The Measurement ID on this blog is <code>G-E8PLTTEFKX</code> — but that's this blog's ID. You must use the ID from your own property; don't copy this example ID.
+        </div>
+        <br><h2><b>Step 2: Create a Google Tag Manager Container</b></h2>
+        <hr class="dashed"/></br>
+        <br>Open <a href="https://tagmanager.google.com" target="_blank" rel="noopener">tagmanager.google.com</a> and sign in with the same Google account. Click <b>Create Account</b>, fill in the account name and container name (your blog's name, for example), choose Target Platform <b>Web</b>, then click <b>Create</b>. Once the container is created, you'll see your <b>Container ID</b> — the code looks like <code>GTM-XXXXXXX</code>. Copy it and save it.
+        <div class="callout tip">
+            <b>Tip:</b> The Container ID on this blog is <code>GTM-TKZ69BJN</code> — just like the Measurement ID, that's an example from this blog. Use the Container ID from your own container.
+        </div>
+        <br><h2><b>Step 3: Install the Snippets on Every Page</b></h2>
+        <hr class="dashed"/></br>
+        <br>There are three snippets to install on every HTML page of your blog. First, the GTM snippet — paste it right after the <code>&lt;head&gt;</code> tag:
+        <div class="c">
+            &lt;!-- Google Tag Manager --&gt;<br>
+            &lt;script&gt;(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':<br>
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],<br>
+            j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=<br>
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);<br>
+            })(window,document,'script','dataLayer','GTM-TKZ69BJN');&lt;/script&gt;<br>
+            &lt;!-- End Google Tag Manager --&gt;
+        </div>
+        <br>Second, the GTM noscript snippet — paste it right after the <code>&lt;body&gt;</code> tag:
+        <div class="c">
+            &lt;!-- Google Tag Manager (noscript) --&gt;<br>
+            &lt;noscript&gt;&lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TKZ69BJN"<br>
+            height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;&lt;/noscript&gt;<br>
+            &lt;!-- End Google Tag Manager (noscript) --&gt;
+        </div>
+        <br>Third, the gtag.js snippet for GA4 — paste it inside <code>&lt;head&gt;</code> too, below the GTM snippet:
+        <div class="c">
+            &lt;!-- Google tag (gtag.js) --&gt;<br>
+            &lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-E8PLTTEFKX"&gt;&lt;/script&gt;<br>
+            &lt;script&gt;<br>
+            &nbsp;&nbsp;window.dataLayer = window.dataLayer || [];<br>
+            &nbsp;&nbsp;function gtag(){dataLayer.push(arguments);}<br>
+            &nbsp;&nbsp;gtag('js', new Date());<br>
+            <br>
+            &nbsp;&nbsp;gtag('config', 'G-E8PLTTEFKX');<br>
+            &lt;/script&gt;
+        </div>
+        <div class="callout tip">
+            <b>Tip:</b> Replace <code>G-E8PLTTEFKX</code> with your own Measurement ID, and <code>GTM-TKZ69BJN</code> with your own Container ID. If your blog has many pages, the snippets must be on every page — a page without the snippets won't record its visitors.
+        </div>
+        <br><h2><b>Step 4: Check the Data in Realtime</b></h2>
+        <hr class="dashed"/></br>
+        <br>Save and upload all the HTML files you changed, then wait 1–2 minutes for your blog to update. Open <a href="https://analytics.google.com" target="_blank" rel="noopener">analytics.google.com</a>, go into your property, then choose <b>Reports → Realtime</b>. Open your blog in another browser tab — within 1–2 minutes, the active users number in Realtime will change to 1. That means GA4 is already recording visits.
+        <div class="tutorial-img">
+            <img src="/img/en/diagram-ga4-realtime.svg" alt="An illustration of the Google Analytics Realtime page showing 1 active user right now and a chart of visits from the last 30 minutes"/>
+            <p class="img-caption">Figure 2: Check the data in Realtime — open the blog in another tab, and the active users number changes within 1–2 minutes.</p>
+        </div>
+        <div class="callout tip">
+            <b>Tip:</b> Standard reports such as daily visitor counts and the most-read pages only appear 24–48 hours after installation. So don't panic if the regular reports are still empty on the first day — check Realtime first.
+        </div>
+        <div class="callout warning">
+            <b>Warning:</b> Don't install the GA4 tag inside GTM if you've already installed gtag.js directly, as in this tutorial. Both send the same pageview, so one visit would be counted twice.
+        </div>
+        <br><h2><b>If the Data Doesn't Show Up</b></h2>
+        <hr class="dashed"/></br>
+        <br>- Check the Measurement ID and Container ID — make sure both are correct and belong to your own property/container, not the examples from this tutorial.
+        <br>- Check that the snippets are on every page — open View Source in your browser (Ctrl+U) and search for <code>G-</code> and <code>GTM-</code>.
+        <br>- Turn off your ad blocker while testing — some ad blockers block Google Analytics, so no data gets sent.
+        <br>- Wait a bit — a newly deployed blog needs 1–2 minutes before the new files show up, and Realtime needs 1–2 minutes to display a visit.
+        <br><h2><b>References</b></h2>
+        <hr class="dashed"/></br>
+        <ol>
+            <li><a href="https://support.google.com/analytics/answer/9304153">https://support.google.com/analytics/answer/9304153</a></li>
+            <li><a href="https://support.google.com/tagmanager/answer/6103696">https://support.google.com/tagmanager/answer/6103696</a></li>
+        </ol>
+        <hr class="dashed"/>
+        <div class="support-box">
+            <p><b>Like this tutorial?</b> Support the author so there are more free tutorials.</p>
+            <a class="btn btn-primary" href="https://saweria.co/Febri007" target="_blank" rel="noopener">Support via Saweria</a>
+        </div>
+        <div class="article-nav">
+            <a class="prev" href="/en/cara-daftar-make-fun-dengan-agent.html">&larr; Previous article</a>
+            <a class="next" href="/en/cara-optimasi-seo-blog-github-pages.html">Next article &rarr;</a>
+        </div>
+    </div>
+</main>
+
+
+    <script>
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropbtn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+        </script>
+        <script>
+            var acc = document.getElementsByClassName("accordion");
+            var i
+            for (i = 0; i < acc.length; i++){
+                acc[i].onclick = function(){
+                    this.classList.toggle("active");
+                    this.nextElementSibling.classList.toggle("show");
+                }
+            }
+        </script>
+
+    </div>
+<footer class="site-footer">
+    <div class="wrap footer-inner">
+        <div>
+            <p class="footer-name">Kodename JPG</p>
+            <p class="footer-tag">Linux, web, and AI agent tutorials — written from experience, free to practice.</p>
+        </div>
+        <nav class="footer-nav" aria-label="Footer navigation">
+            <a href="/en/">Home</a>
+            <a href="/en/tutorial.html">Tutorial</a>
+            <a href="/en/arsip.html">Archive</a>
+            <a href="/en/tentang.html">About</a>
+        </nav>
+    </div>
+    <div class="wrap footer-bottom">
+        <p>© 2026 Febriyan · Kodename JPG · <a href="/en/privasi.html">Privacy</a> · <a href="/en/syarat.html">Terms</a> · <a href="https://saweria.co/Febri007" target="_blank" rel="noopener">Support via Saweria</a></p>
+    </div>
+</footer>
+    <script src="/js/theme.js"></script>
+</body>
+
+</html>

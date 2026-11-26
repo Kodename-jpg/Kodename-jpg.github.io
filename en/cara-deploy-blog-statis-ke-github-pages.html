@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TKZ69BJN');</script>
+    <!-- End Google Tag Manager -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-E8PLTTEFKX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-E8PLTTEFKX');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>How to Deploy a Static Blog to GitHub Pages — Kodename JPG</title>
+    <meta name="description" content="How to host a static blog (just HTML and CSS) for free on GitHub Pages.">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Febriyan">
+    <link rel="canonical" href="https://kodename-jpg.github.io/en/cara-deploy-blog-statis-ke-github-pages.html">
+<link rel="alternate" hreflang="id" href="https://kodename-jpg.github.io/cara-deploy-blog-statis-ke-github-pages.html">
+<link rel="alternate" hreflang="en" href="https://kodename-jpg.github.io/en/cara-deploy-blog-statis-ke-github-pages.html">
+<link rel="alternate" hreflang="x-default" href="https://kodename-jpg.github.io/cara-deploy-blog-statis-ke-github-pages.html">
+    <!-- TODO AdSense: paste the AdSense verification code (ca-pub-...) here after the account is approved. Don't enter a fake ID. -->
+    <meta property="og:title" content="How to Deploy a Static Blog to GitHub Pages — Kodename JPG">
+    <meta property="og:description" content="How to host a static blog (just HTML and CSS) for free on GitHub Pages.">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Kodename JPG">
+    <meta property="og:url" content="https://kodename-jpg.github.io/en/cara-deploy-blog-statis-ke-github-pages.html">
+    <meta property="og:image" content="https://kodename-jpg.github.io/img/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Kodename JPG — Linux, Web & AI Agent Tutorials">
+    <meta property="og:locale" content="en_US">
+    <meta property="article:published_time" content="2026-11-17">
+    <meta property="article:modified_time" content="2026-11-26">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Bodoni:wght@500;600;700&family=Public+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <script>
+        /* Apply the theme (light/dark) before the page is drawn, so it doesn't flash */
+        (function () {
+            try {
+                var t = localStorage.getItem('kodename-theme');
+                if (t !== 'light' && t !== 'dark') {
+                    t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                }
+                document.documentElement.setAttribute('data-theme', t);
+            } catch (e) {}
+        })();
+    </script>
+<script>
+/* Auto-detect language: redirect to the Indonesian version for Indonesian browsers */
+(function () {
+    try {
+        if (new URLSearchParams(location.search).get('lang')) return;
+        if (localStorage.getItem('site-lang')) return;
+        var lang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+        if (lang.indexOf('id') === 0 || lang.indexOf('in') === 0) {
+            var path = location.pathname.replace(/^\/en\//, '');
+            location.replace('/' + path);
+        }
+    } catch (e) {}
+})();
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "How to Deploy a Static Blog to GitHub Pages",
+  "description": "How to host a static blog (just HTML and CSS) for free on GitHub Pages.",
+  "url": "https://kodename-jpg.github.io/en/cara-deploy-blog-statis-ke-github-pages.html",
+  "datePublished": "2026-11-17",
+  "dateModified": "2026-11-26",
+  "inLanguage": "en",
+  "author": {
+    "@type": "Person",
+    "name": "Febriyan",
+    "url": "https://github.com/Kodename-jpg"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Kodename JPG",
+    "url": "https://kodename-jpg.github.io"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://kodename-jpg.github.io/en/cara-deploy-blog-statis-ke-github-pages.html"
+  }
+}
+</script>
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TKZ69BJN"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <header class="topbar">
+    <div class="wrap topbar-inner">
+        <a class="brand" href="/en/" aria-label="Kodename JPG — Home">
+            <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><rect x="2" y="4" width="20" height="16" rx="3" stroke="currentColor" stroke-width="1.8"/><path d="m7 9 3 3-3 3M12 15h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span class="brand-name">Kodename JPG</span>
+        </a>
+        <nav class="mainnav" aria-label="Main navigation">
+            <button onclick="myFunction()" class="dropbtn menu-btn" type="button" aria-label="Open menu" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>Menu</span></button>
+            <div id="myDropdown" class="dropdown-content nav-links">
+                <a href="/en/">Home</a>
+                <a href="/en/tutorial.html" class="active">Tutorials</a>
+                <a href="/en/arsip.html">Archive</a>
+                <a href="/en/tentang.html">About</a>
+            </div>
+        </nav>
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode"><svg class="icon-moon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 13.5A8.5 8.5 0 0 1 10.5 4 8.5 8.5 0 1 0 20 13.5Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><svg class="icon-sun" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.8"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+        <div class="lang-switch" role="group" aria-label="Choose language"><a href="/cara-deploy-blog-statis-ke-github-pages.html" lang="id" onclick="try{localStorage.setItem('site-lang','id')}catch(e){}">ID</a><span class="lang-sep" aria-hidden="true">|</span><span class="lang-active" aria-current="true">EN</span></div>
+    </div>
+</header>
+<div class="container">
+
+<main class="page">
+    <div class="content-box">
+        <br>
+        <h1><b>How to Deploy a Static Blog to GitHub Pages</b></h1>
+        </br>
+        <p class="tutorial-meta">Written: Nov 17, 2026 · Level: Beginner · Category: Web</p>
+        <br><a href="/en/">Home</a> > <a href="/en/tutorial.html">Tutorials</a> > How to Deploy a Static Blog to GitHub Pages</br>
+        <button class="accordion">Article List</button>
+        <div class="panel">
+            <b>Archive</b>
+            <hr class="dashed"/><br>
+            <ul class="archive-list">
+                <li><a href="/en/instal-apache-mysql-php-phpmyadmin-di-archlinux.html">Install Apache, MySQL, PHP and phpMyAdmin on Archlinux</a> <span class="archive-date">2021</span></li>
+                <li><a href="/en/konfigurasi-virtual-host-apache-server-di-archlinux.html">Configure an Apache Virtual Host Server on ArchLinux</a> <span class="archive-date">Jun 12, 2021</span></li>
+                <li><a href="/en/cara-deploy-blog-statis-ke-github-pages.html">How to Deploy a Static Blog to GitHub Pages</a> <span class="archive-date">Nov 17, 2026</span></li>
+                <li><a href="/en/cara-daftar-make-fun-dengan-agent.html">How to Sign Up for make.fun with an Agent and Let the Agent Find Bounties on Its Own</a> <span class="archive-date">Nov 17, 2026</span></li>
+            </ul>
+        </div>
+        <br>
+        A static blog is a blog whose content is just HTML, CSS, and image files — no database and no server-side programming language. This very blog is an example: all of it is just HTML and CSS files, yet anyone can open it over the internet. The hosting is free, using GitHub Pages.
+        <div class="tutorial-img">
+            <img src="/img/en/diagram-github-pages-flow.svg" alt="How to deploy a blog to GitHub Pages"/>
+            <p class="img-caption">Figure 1: The static blog deployment flow to GitHub Pages — from blog files to a live blog.</p>
+        </div>
+        <br><h2><b>What You Need</b></h2>
+        <hr class="dashed"/></br>
+        <br>- A GitHub account (free, sign up at github.com).
+        <br>- Your blog files — at minimum index.html.
+        <br>- A browser.
+        <br><h2><b>Step 1: Create a Repository</b></h2>
+        <hr class="dashed"/></br>
+        <br>Log in to GitHub, click the + button at the top right, then choose New repository. Fill in Repository name with username.github.io — replace username with your GitHub username. Choose Public, then click Create repository.
+        <div class="c">
+            username.github.io
+        </div>
+        <div class="callout tip">
+            <b>Tip:</b> If you want to make a second blog, the repository name is up to you, for example blog-saya. Its address will then be username.github.io/blog-saya.
+        </div>
+        <br><h2><b>Step 2: Upload the Blog Files</b></h2>
+        <hr class="dashed"/></br>
+        <br>On the repository page, click Add file, then Upload files. Drag the index.html file, the css folder, and the img folder there, then click Commit changes. The index.html file is required — it's your blog's home page.
+        <div class="tutorial-img">
+            <img src="/img/en/diagram-github-pages-files.svg" alt="The blog repository's contents"/>
+            <p class="img-caption">Figure 2: Example of a blog repository's contents — the index.html file is required.</p>
+        </div>
+        <br>If you're already comfortable with Git, you can push via the terminal:
+        <div class="c">
+            git init<br>
+            git add .<br>
+            git commit -m "Blog pertama"<br>
+            git remote add origin https://github.com/username/username.github.io.git<br>
+            git push -u origin main
+        </div>
+        <div class="callout warning">
+            <b>Warning:</b> Don't upload secret files like passwords or API keys to a public repository — everyone can see its contents.
+        </div>
+        <br><h2><b>Step 3: Enable GitHub Pages</b></h2>
+        <hr class="dashed"/></br>
+        <br>Go to the Settings tab in your repository, then choose Pages in the left menu. In the Branch section, choose main and the / (root) folder, then click Save.
+        <br><h2><b>Step 4: Open Your Blog</b></h2>
+        <hr class="dashed"/></br>
+        <br>Wait 1–2 minutes until GitHub finishes building your blog, then open its address:
+        <div class="c">
+            https://username.github.io/
+        </div>
+        <div class="callout tip">
+            <b>Tip:</b> If the page hasn't appeared yet, wait a moment and then refresh. The first GitHub Pages build usually takes 1–2 minutes.
+        </div>
+        <br><h2><b>Update the Blog</b></h2>
+        <hr class="dashed"/></br>
+        <br>To change the blog's content, edit the files directly on GitHub or push again via Git. GitHub Pages will rebuild your blog automatically within 1–2 minutes.
+        <br><h2><b>References</b></h2>
+        <hr class="dashed"/></br>
+        <ol>
+            <li><a href="https://docs.github.com/en/pages/getting-started-with-github-pages">https://docs.github.com/en/pages/getting-started-with-github-pages</a></li>
+            <li><a href="https://docs.github.com/en/pages/quickstart">https://docs.github.com/en/pages/quickstart</a></li>
+        </ol>
+        <hr class="dashed"/>
+        <div class="support-box">
+            <p><b>Like this tutorial?</b> Support the author so there are even more free tutorials.</p>
+            <a class="btn btn-primary" href="https://saweria.co/Febri007" target="_blank" rel="noopener">Support via Saweria</a>
+        </div>
+        <div class="article-nav">
+            <a class="prev" href="/en/konfigurasi-virtual-host-apache-server-di-archlinux.html">&larr; Previous article</a>
+            <a class="next" href="/en/cara-daftar-make-fun-dengan-agent.html">Next article &rarr;</a>
+        </div>
+    </div>
+</main>
+
+
+    <script>
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropbtn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+        </script>
+        <script>
+            var acc = document.getElementsByClassName("accordion");
+            var i
+            for (i = 0; i < acc.length; i++){
+                acc[i].onclick = function(){
+                    this.classList.toggle("active");
+                    this.nextElementSibling.classList.toggle("show");
+                }
+            }
+        </script>
+
+    </div>
+<footer class="site-footer">
+    <div class="wrap footer-inner">
+        <div>
+            <p class="footer-name">Kodename JPG</p>
+            <p class="footer-tag">Linux, web, and AI agent tutorials — written from experience, free to practice.</p>
+        </div>
+        <nav class="footer-nav" aria-label="Footer navigation">
+            <a href="/en/">Home</a>
+            <a href="/en/tutorial.html">Tutorials</a>
+            <a href="/en/arsip.html">Archive</a>
+            <a href="/en/tentang.html">About</a>
+        </nav>
+    </div>
+    <div class="wrap footer-bottom">
+        <p>© 2026 Febriyan · Kodename JPG · <a href="/en/privasi.html">Privacy</a> · <a href="/en/syarat.html">Terms</a> · <a href="https://saweria.co/Febri007" target="_blank" rel="noopener">Support via Saweria</a></p>
+    </div>
+</footer>
+    <script src="/js/theme.js"></script>
+</body>
+
+</html>

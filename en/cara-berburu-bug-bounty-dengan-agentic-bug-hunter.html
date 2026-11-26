@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TKZ69BJN');</script>
+    <!-- End Google Tag Manager -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-E8PLTTEFKX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-E8PLTTEFKX');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>How to Hunt Bug Bounties with Agentic-Bug-Hunter (Free, Local AI) — Kodename JPG</title>
+    <meta name="description" content="How to hunt bug bounties with Agentic-Bug-Hunter: its commands, the full workflow, and its limits — free with local AI via Ollama.">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Febriyan">
+    <link rel="canonical" href="https://kodename-jpg.github.io/en/cara-berburu-bug-bounty-dengan-agentic-bug-hunter.html">
+<link rel="alternate" hreflang="id" href="https://kodename-jpg.github.io/cara-berburu-bug-bounty-dengan-agentic-bug-hunter.html">
+<link rel="alternate" hreflang="en" href="https://kodename-jpg.github.io/en/cara-berburu-bug-bounty-dengan-agentic-bug-hunter.html">
+<link rel="alternate" hreflang="x-default" href="https://kodename-jpg.github.io/cara-berburu-bug-bounty-dengan-agentic-bug-hunter.html">
+    <!-- TODO AdSense: paste the AdSense verification code (ca-pub-...) here after the account is approved. Don't enter a fake ID. -->
+    <meta property="og:title" content="How to Hunt Bug Bounties with Agentic-Bug-Hunter (Free, Local AI) — Kodename JPG">
+    <meta property="og:description" content="How to hunt bug bounties with Agentic-Bug-Hunter: its commands, the full workflow, and its limits — free with local AI via Ollama.">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Kodename JPG">
+    <meta property="og:url" content="https://kodename-jpg.github.io/en/cara-berburu-bug-bounty-dengan-agentic-bug-hunter.html">
+    <meta property="og:image" content="https://kodename-jpg.github.io/img/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Kodename JPG — Linux, Web & AI Agent Tutorials">
+    <meta property="og:locale" content="en_US">
+    <meta property="article:published_time" content="2026-11-18">
+    <meta property="article:modified_time" content="2026-11-26">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Bodoni:wght@500;600;700&family=Public+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <script>
+        /* Apply the theme (light/dark) before the page is drawn, so it doesn't flash */
+        (function () {
+            try {
+                var t = localStorage.getItem('kodename-theme');
+                if (t !== 'light' && t !== 'dark') {
+                    t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                }
+                document.documentElement.setAttribute('data-theme', t);
+            } catch (e) {}
+        })();
+    </script>
+<script>
+/* Auto-detect language: redirect to the Indonesian version for Indonesian browsers */
+(function () {
+    try {
+        if (new URLSearchParams(location.search).get('lang')) return;
+        if (localStorage.getItem('site-lang')) return;
+        var lang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+        if (lang.indexOf('id') === 0 || lang.indexOf('in') === 0) {
+            var path = location.pathname.replace(/^\/en\//, '');
+            location.replace('/' + path);
+        }
+    } catch (e) {}
+})();
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "How to Hunt Bug Bounties with Agentic-Bug-Hunter (Free, Local AI)",
+  "description": "How to hunt bug bounties with Agentic-Bug-Hunter: its commands, the full workflow, and its limits — free with local AI via Ollama.",
+  "url": "https://kodename-jpg.github.io/en/cara-berburu-bug-bounty-dengan-agentic-bug-hunter.html",
+  "datePublished": "2026-11-18",
+  "dateModified": "2026-11-26",
+  "inLanguage": "en",
+  "author": {
+    "@type": "Person",
+    "name": "Febriyan",
+    "url": "https://github.com/Kodename-jpg"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Kodename JPG",
+    "url": "https://kodename-jpg.github.io"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://kodename-jpg.github.io/en/cara-berburu-bug-bounty-dengan-agentic-bug-hunter.html"
+  }
+}
+</script>
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TKZ69BJN"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <header class="topbar">
+    <div class="wrap topbar-inner">
+        <a class="brand" href="/en/" aria-label="Kodename JPG — Home">
+            <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><rect x="2" y="4" width="20" height="16" rx="3" stroke="currentColor" stroke-width="1.8"/><path d="m7 9 3 3-3 3M12 15h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span class="brand-name">Kodename JPG</span>
+        </a>
+        <nav class="mainnav" aria-label="Main navigation">
+            <button onclick="myFunction()" class="dropbtn menu-btn" type="button" aria-label="Open menu" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>Menu</span></button>
+            <div id="myDropdown" class="dropdown-content nav-links">
+                <a href="/en/">Home</a>
+                <a href="/en/tutorial.html" class="active">Tutorials</a>
+                <a href="/en/arsip.html">Archive</a>
+                <a href="/en/tentang.html">About</a>
+            </div>
+        </nav>
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode"><svg class="icon-moon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 13.5A8.5 8.5 0 0 1 10.5 4 8.5 8.5 0 1 0 20 13.5Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><svg class="icon-sun" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.8"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+        <div class="lang-switch" role="group" aria-label="Choose language"><a href="/cara-berburu-bug-bounty-dengan-agentic-bug-hunter.html" lang="id" onclick="try{localStorage.setItem('site-lang','id')}catch(e){}">ID</a><span class="lang-sep" aria-hidden="true">|</span><span class="lang-active" aria-current="true">EN</span></div>
+    </div>
+</header>
+<div class="container">
+
+<main class="page">
+    <div class="content-box">
+        <br>
+        <h1><b>How to Hunt Bug Bounties with Agentic-Bug-Hunter (Free, Local AI)</b></h1>
+        </br>
+        <p class="tutorial-meta">Written: Nov 18, 2026 · Level: Intermediate · Category: AI Agent</p>
+        <br><a href="/en/">Home</a> > <a href="/en/tutorial.html">Tutorials</a> > How to Hunt Bug Bounties with Agentic-Bug-Hunter (Free, Local AI)</br>
+        <button class="accordion">Article List</button>
+        <div class="panel">
+            <b>Archive</b>
+            <hr class="dashed"/><br>
+            <ul class="archive-list">
+                <li><a href="/en/instal-apache-mysql-php-phpmyadmin-di-archlinux.html">Install Apache, MySQL, PHP and phpMyAdmin on Archlinux</a> <span class="archive-date">2021</span></li>
+                <li><a href="/en/konfigurasi-virtual-host-apache-server-di-archlinux.html">Configure an Apache Virtual Host Server on ArchLinux</a> <span class="archive-date">Jun 12, 2021</span></li>
+                <li><a href="/en/cara-deploy-blog-statis-ke-github-pages.html">How to Deploy a Static Blog to GitHub Pages</a> <span class="archive-date">Nov 17, 2026</span></li>
+                <li><a href="/en/cara-daftar-make-fun-dengan-agent.html">How to Sign Up for make.fun with an Agent and Let the Agent Find Bounties on Its Own</a> <span class="archive-date">Nov 17, 2026</span></li>
+                <li><a href="/en/cara-berburu-bug-bounty-dengan-agentic-bug-hunter.html">How to Hunt Bug Bounties with Agentic-Bug-Hunter (Free, Local AI)</a> <span class="archive-date">Nov 18, 2026</span></li>
+            </ul>
+        </div>
+        <br>
+Agentic-Bug-Hunter is an open-source toolkit for bug bounty: from recon to reporting, everything is AI-assisted and runs from the terminal. The interesting part: it can run completely free with a local AI model via Ollama — no paid API key needed. I have tried the pipeline myself on a local demo target, and this tutorial summarizes its commands and how to use them.
+        <div class="tutorial-img">
+            <img src="/img/en/diagram-bughunter-flow.svg" alt="Bug bounty hunting workflow"/>
+            <p class="img-caption">Figure 1: The bug bounty hunting workflow — from scope to report.</p>
+        </div>
+        <div class="callout warning">
+            <b>Warning:</b> Only hunt targets that are <b>in scope</b> for an official bug bounty program (HackerOne, Bugcrowd, Intigriti, Immunefi). Read the program's policy first before touching any asset. Never scan a site you don't own or that has no bug bounty program.
+        </div>
+        <br><h2><b>What You Need</b></h2>
+        <hr class="dashed"/></br>
+        <br>- Python 3.11+ and Git.
+        <br>- Ollama + a local AI model (for example qwen2.5:3b) — free, no API key.
+        <br>- Recon tools (subfinder, httpx, katana, nuclei) — most of them come installed with the repo.
+        <br><h2><b>Part 1: Installation and Setup</b></h2>
+        <hr class="dashed"/></br>
+        <br><b>Step 1: Clone the repo and enter its virtual environment.</b>
+        <div class="c">
+            git clone https://github.com/awarexone/Agentic-Bug-Hunter<br>
+            cd Agentic-Bug-Hunter
+        </div>
+        <br><b>Step 2: Set the provider and model.</b> This command saves your choice in the config — run it once at the start. What I use: Ollama + qwen2.5:3b (local, free).
+        <div class="c">
+            bughunter setup --provider ollama --model qwen2.5:3b
+        </div>
+        <br><b>Step 3: Check the status.</b> This command shows the active provider and model, the target currently being worked on, and how far along the progress is.
+        <div class="c">
+            bughunter status
+        </div>
+        <div class="callout tip">
+            <b>Tip:</b> If Ollama disappears after a restart (its binary got deleted), just reinstall the binary — the models you already downloaded are safe in the Ollama model folder, no need to download them again.
+        </div>
+        <br><h2><b>Part 2: Commands</b></h2>
+        <hr class="dashed"/></br>
+        <br>The CLI has 12 main commands. They all run through <code>bughunter</code> — the global flags <code>--provider</code>, <code>--model</code>, and <code>--no-banner</code> work with every command.
+        <br><b>Basic commands.</b> <code>providers</code> lists all providers with their status (which one is active, which one has no API key yet). <code>models</code> lists the models available for the active provider. <code>chat</code> opens an interactive AI shell — handy for asking questions about a target or discussing findings without running the full pipeline.
+        <br><b>recon &lt;target&gt; — recon and attack surface analysis.</b> Runs the full recon pipeline, then AI analyzes the attack surface: subdomain enumeration, live host checks, URL collection, parameter discovery, then a nuclei scan. Results are saved in the <code>recon/&lt;target&gt;/</code> folder.
+        <div class="c">
+            bughunter recon target.com
+        </div>
+        <br><b>hunt &lt;target&gt; — the full pipeline.</b> The main command: recon, vulnerability hunting, validation, and reporting, in a single run. The <code>--quick</code> option runs fewer checks — faster, good for a first pass.
+        <div class="c">
+            bughunter hunt target.com<br>
+            bughunter hunt target.com --quick
+        </div>
+        <br><b>validate [finding] — the 7-Question Gate.</b> Tests a single finding with seven questions (is there a PoC, is the impact concrete, would a triager consider it a real bug, is it in scope, and so on). The result: KEEP (worth reporting) or DROP (discard). Run this for every finding BEFORE writing the report — invalid reports hurt your validity ratio on the platform.
+        <div class="c">
+            bughunter validate "robots.txt membocorkan /admin dan /.env"
+        </div>
+        <br><b>triage [finding] — quick triage.</b> A quick alias for validate: a brief assessment of one finding, without the full gate. Use it when there are many candidate findings and you want to filter which ones deserve a full validation.
+        <br><b>report — write a submission-ready report.</b> Writes a bug report ready to submit to a platform (HackerOne/Bugcrowd/Intigriti/Immunefi format, complete with CVSS). This command takes no target argument — it reads the existing findings folder. Always read the draft first before submitting; the decision to submit is yours, not the tool's.
+        <div class="c">
+            bughunter report<br>
+            bughunter report --findings-dir findings/target.com
+        </div>
+        <br><b>chain [finding] — chain exploits A → B → C.</b> Takes one finding and chains exploits together — for example XSS, steal a token, then take over an account. A chain like this has a far bigger impact than a single bug on its own, and is usually paid more.
+        <div class="c">
+            bughunter chain "XSS di halaman profil"
+        </div>
+        <br><b>mcp — MCP server, doctor, and the tool catalog.</b> Three subcommands: <code>serve</code> runs the MCP server so other AIs can use the bug hunter tools; <code>doctor</code> checks the health of the MCP setup; <code>tools</code> shows the catalog of tools available via MCP.
+        <div class="c">
+            bughunter mcp serve<br>
+            bughunter mcp doctor<br>
+            bughunter mcp tools
+        </div>
+        <br><h2><b>Part 3: The Full Workflow</b></h2>
+        <hr class="dashed"/></br>
+        <br><b>Step 1: Scope.</b> Make sure the program and its assets are in scope — read the program policy first.
+        <br><b>Step 2: Recon.</b> Map the target's attack surface.
+        <br><b>Step 3: Hunt.</b> Look for vulnerabilities in that attack surface.
+        <br><b>Step 4: Validate every finding</b> with the 7-Question Gate — discard the weak ones.
+        <br><b>Step 5: Write the report</b> and read the draft before submitting.
+        <div class="c">
+            bughunter recon target.com<br>
+            bughunter hunt target.com<br>
+            bughunter validate "temuan pertama"<br>
+            bughunter report
+        </div>
+        <br><h2><b>Limits You Should Know</b></h2>
+        <hr class="dashed"/></br>
+        <br>- Raw IP:port targets (for example 127.0.0.1:8080) can't be scanned by the standard pipeline — recon treats the target as not a live host, so the scan silently never runs. The workaround: fill in a manual URL list, then run the scanner directly.
+        <br>- The CLI only covers 7 families of checks: upload, SQLi, XSS, SSTI, CMS, MFA, SAML. Not tested: SSRF, open redirect, auth bypass, /.env exposure, CORS, LFI, IDOR, JWT, GraphQL — those live in the plugin's slash commands, not the CLI.
+        <br>- Local models are slow: qwen2.5:3b runs at about 5.7 tokens/second after tuning — a 2000-token analysis takes about 6 minutes. This model also sometimes hallucinates endpoints from junk Wayback URLs — verify every quoted URL before acting on it.
+        <br>- Nuclei needs TMPDIR outside /tmp — /tmp is only a 512 MB tmpfs, while the nuclei templates are about 83 MB.
+        <br>- The repo's built-in demo target is already hardened — a correct scan produces zero findings. Use it only as a smoke test.
+        <br><h2><b>References</b></h2>
+        <hr class="dashed"/></br>
+        <ol>
+            <li><a href="https://github.com/awarexone/Agentic-Bug-Hunter">https://github.com/awarexone/Agentic-Bug-Hunter</a></li>
+            <li><a href="https://www.hackerone.com/">https://www.hackerone.com/</a></li>
+            <li><a href="https://bugcrowd.com/">https://bugcrowd.com/</a></li>
+            <li><a href="https://www.intigriti.com/">https://www.intigriti.com/</a></li>
+            <li><a href="https://immunefi.com/">https://immunefi.com/</a></li>
+        </ol>
+        <hr class="dashed"/>
+        <div class="support-box">
+            <p><b>Like this tutorial?</b> Support the author so there are even more free tutorials.</p>
+            <a class="btn btn-primary" href="https://saweria.co/Febri007" target="_blank" rel="noopener">Support via Saweria</a>
+        </div>
+        <div class="article-nav">
+            <a class="prev" href="/en/cara-daftar-make-fun-dengan-agent.html">&larr; Previous article</a>
+        </div>
+    </div>
+</main>
+
+
+    <script>
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropbtn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+        </script>
+        <script>
+            var acc = document.getElementsByClassName("accordion");
+            var i
+            for (i = 0; i < acc.length; i++){
+                acc[i].onclick = function(){
+                    this.classList.toggle("active");
+                    this.nextElementSibling.classList.toggle("show");
+                }
+            }
+        </script>
+
+    </div>
+<footer class="site-footer">
+    <div class="wrap footer-inner">
+        <div>
+            <p class="footer-name">Kodename JPG</p>
+            <p class="footer-tag">Linux, web, and AI agent tutorials — written from experience, free to practice.</p>
+        </div>
+        <nav class="footer-nav" aria-label="Footer navigation">
+            <a href="/en/">Home</a>
+            <a href="/en/tutorial.html">Tutorials</a>
+            <a href="/en/arsip.html">Archive</a>
+            <a href="/en/tentang.html">About</a>
+        </nav>
+    </div>
+    <div class="wrap footer-bottom">
+        <p>© 2026 Febriyan · Kodename JPG · <a href="/en/privasi.html">Privacy</a> · <a href="/en/syarat.html">Terms</a> · <a href="https://saweria.co/Febri007" target="_blank" rel="noopener">Support via Saweria</a></p>
+    </div>
+</footer>
+    <script src="/js/theme.js"></script>
+</body>
+
+</html>

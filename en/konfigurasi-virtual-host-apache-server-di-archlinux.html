@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TKZ69BJN');</script>
+    <!-- End Google Tag Manager -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-E8PLTTEFKX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-E8PLTTEFKX');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Configuring an Apache Virtual Host on Arch Linux — Kodename JPG</title>
+    <meta name="description" content="How to set up Apache Virtual Hosts on Arch Linux.">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Febriyan">
+    <link rel="canonical" href="https://kodename-jpg.github.io/en/konfigurasi-virtual-host-apache-server-di-archlinux.html">
+    <link rel="alternate" hreflang="id" href="https://kodename-jpg.github.io/konfigurasi-virtual-host-apache-server-di-archlinux.html">
+    <link rel="alternate" hreflang="en" href="https://kodename-jpg.github.io/en/konfigurasi-virtual-host-apache-server-di-archlinux.html">
+    <link rel="alternate" hreflang="x-default" href="https://kodename-jpg.github.io/konfigurasi-virtual-host-apache-server-di-archlinux.html">
+    <!-- TODO AdSense: tempel kode verifikasi AdSense (ca-pub-...) di sini setelah akun disetujui. Jangan isi ID palsu. -->
+    <meta property="og:title" content="Configuring an Apache Virtual Host on Arch Linux — Kodename JPG">
+    <meta property="og:description" content="How to set up Apache Virtual Hosts on Arch Linux.">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Kodename JPG">
+    <meta property="og:url" content="https://kodename-jpg.github.io/en/konfigurasi-virtual-host-apache-server-di-archlinux.html">
+    <meta property="og:image" content="https://kodename-jpg.github.io/img/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Kodename JPG — Linux, Web & AI Agent Tutorials">
+    <meta property="og:locale" content="en_US">
+    <meta property="article:published_time" content="2021-06-12">
+    <meta property="article:modified_time" content="2026-11-26">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Bodoni:wght@500;600;700&family=Public+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <script>
+        /* Terapkan tema (siang/malam) sebelum halaman digambar, biar tidak berkedip */
+        (function () {
+            try {
+                var t = localStorage.getItem('kodename-theme');
+                if (t !== 'light' && t !== 'dark') {
+                    t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                }
+                document.documentElement.setAttribute('data-theme', t);
+            } catch (e) {}
+        })();
+    </script>
+<script>
+/* Auto-detect language: redirect to the Indonesian version for Indonesian browsers */
+(function () {
+    try {
+        if (new URLSearchParams(location.search).get('lang')) return;
+        if (localStorage.getItem('site-lang')) return;
+        var lang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+        if (lang.indexOf('id') === 0 || lang.indexOf('in') === 0) {
+            var path = location.pathname.replace(/^\/en\//, '');
+            location.replace('/' + path);
+        }
+    } catch (e) {}
+})();
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Configuring an Apache Virtual Host on Arch Linux",
+  "description": "How to set up Apache Virtual Hosts on Arch Linux.",
+  "url": "https://kodename-jpg.github.io/en/konfigurasi-virtual-host-apache-server-di-archlinux.html",
+  "datePublished": "2021-06-12",
+  "dateModified": "2026-11-26",
+  "inLanguage": "en",
+  "author": {
+    "@type": "Person",
+    "name": "Febriyan",
+    "url": "https://github.com/Kodename-jpg"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Kodename JPG",
+    "url": "https://kodename-jpg.github.io"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://kodename-jpg.github.io/en/konfigurasi-virtual-host-apache-server-di-archlinux.html"
+  }
+}
+</script>
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TKZ69BJN"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <header class="topbar">
+    <div class="wrap topbar-inner">
+        <a class="brand" href="/en/" aria-label="Kodename JPG — Home">
+            <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><rect x="2" y="4" width="20" height="16" rx="3" stroke="currentColor" stroke-width="1.8"/><path d="m7 9 3 3-3 3M12 15h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span class="brand-name">Kodename JPG</span>
+        </a>
+        <nav class="mainnav" aria-label="Main navigation">
+            <button onclick="myFunction()" class="dropbtn menu-btn" type="button" aria-label="Open menu" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>Menu</span></button>
+            <div id="myDropdown" class="dropdown-content nav-links">
+                <a href="/en/">Home</a>
+                <a href="/en/tutorial.html" class="active">Tutorial</a>
+                <a href="/en/arsip.html">Archive</a>
+                <a href="/en/tentang.html">About</a>
+            </div>
+        </nav>
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode"><svg class="icon-moon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 13.5A8.5 8.5 0 0 1 10.5 4 8.5 8.5 0 1 0 20 13.5Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><svg class="icon-sun" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.8"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+        <div class="lang-switch" role="group" aria-label="Choose language"><a href="/konfigurasi-virtual-host-apache-server-di-archlinux.html" lang="id" onclick="try{localStorage.setItem('site-lang','id')}catch(e){}">ID</a><span class="lang-sep" aria-hidden="true">|</span><span class="lang-active" aria-current="true">EN</span></div>
+    </div>
+</header>
+<div class="container">
+
+<main class="page">
+    <div class="content-box">
+        <br>
+        <h1><b>Configuring an Apache Virtual Host on Arch Linux</b></h1>
+        </br>
+        <p class="tutorial-meta">Written: Jun 12, 2021 · Level: Beginner · Category: Linux</p>
+        <br><a href="/en/">Home</a> > <a href="/en/tutorial.html">Tutorial</a> > Configuring an Apache Virtual Host on Arch Linux</br>
+        <button class="accordion">Article List</button>
+        <div class="panel">
+            <b>Archive</b>
+            <hr class="dashed"/><br>
+            <ul class="archive-list">
+                <li><a href="/en/instal-apache-mysql-php-phpmyadmin-di-archlinux.html">Installing Apache, MySQL, PHP, and phpMyAdmin on Arch Linux</a> <span class="archive-date">2021</span></li>
+                <li><a href="/en/konfigurasi-virtual-host-apache-server-di-archlinux.html">Configuring an Apache Virtual Host on Arch Linux</a> <span class="archive-date">Jun 12, 2021</span></li>
+                <li><a href="/en/cara-deploy-blog-statis-ke-github-pages.html">How to Deploy a Static Blog to GitHub Pages</a> <span class="archive-date">Nov 17, 2026</span></li>
+                <li><a href="/en/cara-daftar-make-fun-dengan-agent.html">How to Sign Up for make.fun with an Agent and Let the Agent Find Bounties on Its Own</a> <span class="archive-date">Nov 17, 2026</span></li>
+            </ul>
+        </div>
+        <br>
+        <p class="center"><b>بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم</b></p>
+        <br><hr class="dashed"/>
+        <br>The term Virtual Host refers to the practice of running more than one website (such as company1.example.com and company2.example.com) on a single machine. Virtual hosts can be 'IP-based', meaning you have a different IP address for each website, or 'name-based', meaning you have several names running on each IP address. The fact that they run on the same physical server is invisible to the end user.
+        Apache was one of the first servers to support IP-based virtual hosts directly. Apache version 1.1 and later support both IP-based and name-based virtual hosts (vhosts). The latter variant of virtual hosts is also sometimes called host-based or non-IP virtual hosts.</br>
+        <br><h2><b>Configuration</b></h2>
+        <hr class="dashed"/>
+        <br>First, edit the file at /etc/httpd/conf/httpd.conf:
+        <div class="c">
+            sudo nano /etc/httpd/conf/httpd.conf
+        </div>
+        <br>then uncomment the following line:
+        <div class="c">
+            Include conf/extra/httpd-vhosts.conf
+        </div>
+        <br>then configure the hosts file:
+        <div class="c">
+            sudo /etc/hosts
+        </div>
+        <br><img class="img" src="/img/v-host.png" alt="img1"></img></br>
+        <br>then create a vhosts folder:
+        <div class="c">
+            sudo mkdir /etc/httpd/conf/vhosts
+        </div>
+        <br> next, create a file in the vhosts folder, with the file name matching the name in hosts:
+        <div class="c">
+            sudo nano /etc/httpd/conf/vhosts/contoh.dom
+        </div>
+        <br><img class="img" src="/img/contoh-dom.png" alt="img2"></img></br>
+        <br>enable the v-host by adding the following to /etc/httpd/conf/httpd.conf:
+        <div class="c">
+            Include conf/vhosts/contoh.dom
+        </div>
+        <br><img class="img" src="/img/enable-vhost.png" alt="img3"></img></br>
+        <br> once done, restart httpd:
+        <div class="c">
+            sudo systemctl restart httpd
+        </div>
+        <br>Open http://contoh.dom in your browser:
+        <br><img class="img1" src="/img/contohweb.png" alt="img4"></img></br>
+        <br>Hope this helps.</br>
+        <br><h2><b>References</b></h2>
+        <hr class="dashed"/></br>
+        <ol>
+            <li><a href="https://wiki.archlinux.org/title/Apache_HTTP_Server#Virtual_hosts">https://wiki.archlinux.org/title/Apache_HTTP_Server#Virtual_hosts</a></li>
+            <li><a href="https://httpd.apache.org/docs/2.4/vhosts/">https://httpd.apache.org/docs/2.4/vhosts/</a></li>
+        </ol>
+        <hr class="dashed"/>
+        <div class="support-box">
+            <p><b>Like this tutorial?</b> Support the author so there are more free tutorials.</p>
+            <a class="btn btn-primary" href="https://saweria.co/Febri007" target="_blank" rel="noopener">Support via Saweria</a>
+        </div>
+        <div class="article-nav">
+            <a class="prev" href="/en/instal-apache-mysql-php-phpmyadmin-di-archlinux.html">&larr; Previous article</a>
+            <a class="next" href="/en/cara-deploy-blog-statis-ke-github-pages.html">Next article &rarr;</a>
+        </div>
+    </div>
+</main>
+
+
+    <script>
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropbtn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+        </script>
+        <script>
+            var acc = document.getElementsByClassName("accordion");
+            var i
+            for (i = 0; i < acc.length; i++){
+                acc[i].onclick = function(){
+                    this.classList.toggle("active");
+                    this.nextElementSibling.classList.toggle("show");
+                }
+            }
+        </script>
+
+    </div>
+<footer class="site-footer">
+    <div class="wrap footer-inner">
+        <div>
+            <p class="footer-name">Kodename JPG</p>
+            <p class="footer-tag">Linux, web, and AI agent tutorials — written from experience, free to practice.</p>
+        </div>
+        <nav class="footer-nav" aria-label="Footer navigation">
+            <a href="/en/">Home</a>
+            <a href="/en/tutorial.html">Tutorial</a>
+            <a href="/en/arsip.html">Archive</a>
+            <a href="/en/tentang.html">About</a>
+        </nav>
+    </div>
+    <div class="wrap footer-bottom">
+        <p>© 2026 Febriyan · Kodename JPG · <a href="/en/privasi.html">Privacy</a> · <a href="/en/syarat.html">Terms</a> · <a href="https://saweria.co/Febri007" target="_blank" rel="noopener">Support via Saweria</a></p>
+    </div>
+</footer>
+    <script src="/js/theme.js"></script>
+</body>
+
+</html>

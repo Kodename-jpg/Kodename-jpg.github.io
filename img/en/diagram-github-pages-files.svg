@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="220" viewBox="0 0 420 220" font-family="Arial, Helvetica, sans-serif">
+<rect x="0" y="0" width="420" height="220" rx="8" fill="#ffffff"/>
+<text x="210" y="28" text-anchor="middle" font-size="17" font-weight="bold" fill="#2c2c2c">The blog repository's contents</text>
+<text x="40" y="64" font-family="monospace" font-size="15" fill="#2c2c2c">username.github.io/</text>
+<text x="40" y="90" font-family="monospace" font-size="15" fill="#2c2c2c">├── index.html</text>
+<text x="40" y="116" font-family="monospace" font-size="15" fill="#2c2c2c">├── css/</text>
+<text x="40" y="142" font-family="monospace" font-size="15" fill="#2c2c2c">│   └── style.css</text>
+<text x="40" y="168" font-family="monospace" font-size="15" fill="#2c2c2c">└── img/</text>
+<text x="40" y="194" font-family="monospace" font-size="15" fill="#2c2c2c">    └── folder.png</text>
+</svg>

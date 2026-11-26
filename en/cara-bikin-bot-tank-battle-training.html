@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TKZ69BJN');</script>
+    <!-- End Google Tag Manager -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-E8PLTTEFKX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-E8PLTTEFKX');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>How to Build a Tank Bot on battle.training — Kodename JPG</title>
+    <meta name="description" content="How to build a tank bot on battle.training: from signing up and writing a controller to your bot fighting in the arena — free.">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Febriyan">
+    <link rel="canonical" href="https://kodename-jpg.github.io/en/cara-bikin-bot-tank-battle-training.html">
+<link rel="alternate" hreflang="id" href="https://kodename-jpg.github.io/cara-bikin-bot-tank-battle-training.html">
+<link rel="alternate" hreflang="en" href="https://kodename-jpg.github.io/en/cara-bikin-bot-tank-battle-training.html">
+<link rel="alternate" hreflang="x-default" href="https://kodename-jpg.github.io/cara-bikin-bot-tank-battle-training.html">
+    <!-- TODO AdSense: paste the AdSense verification code (ca-pub-...) here after the account is approved. Don't enter a fake ID. -->
+    <meta property="og:title" content="How to Build a Tank Bot on battle.training — Kodename JPG">
+    <meta property="og:description" content="How to build a tank bot on battle.training: from signing up and writing a controller to your bot fighting in the arena — free.">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Kodename JPG">
+    <meta property="og:url" content="https://kodename-jpg.github.io/en/cara-bikin-bot-tank-battle-training.html">
+    <meta property="og:image" content="https://kodename-jpg.github.io/img/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Kodename JPG — Linux, Web & AI Agent Tutorials">
+    <meta property="og:locale" content="en_US">
+    <meta property="article:published_time" content="2026-11-26">
+    <meta property="article:modified_time" content="2026-11-26">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Bodoni:wght@500;600;700&family=Public+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <script>
+        /* Apply the theme (light/dark) before the page is drawn, so it doesn't flash */
+        (function () {
+            try {
+                var t = localStorage.getItem('kodename-theme');
+                if (t !== 'light' && t !== 'dark') {
+                    t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                }
+                document.documentElement.setAttribute('data-theme', t);
+            } catch (e) {}
+        })();
+    </script>
+<script>
+/* Auto-detect language: redirect to the Indonesian version for Indonesian browsers */
+(function () {
+    try {
+        if (new URLSearchParams(location.search).get('lang')) return;
+        if (localStorage.getItem('site-lang')) return;
+        var lang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+        if (lang.indexOf('id') === 0 || lang.indexOf('in') === 0) {
+            var path = location.pathname.replace(/^\/en\//, '');
+            location.replace('/' + path);
+        }
+    } catch (e) {}
+})();
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "How to Build a Tank Bot on battle.training",
+  "description": "How to build a tank bot on battle.training: from signing up and writing a controller to your bot fighting in the arena — free.",
+  "url": "https://kodename-jpg.github.io/en/cara-bikin-bot-tank-battle-training.html",
+  "datePublished": "2026-11-26",
+  "dateModified": "2026-11-26",
+  "inLanguage": "en",
+  "author": {
+    "@type": "Person",
+    "name": "Febriyan",
+    "url": "https://github.com/Kodename-jpg"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Kodename JPG",
+    "url": "https://kodename-jpg.github.io"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://kodename-jpg.github.io/en/cara-bikin-bot-tank-battle-training.html"
+  }
+}
+</script>
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TKZ69BJN"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <header class="topbar">
+    <div class="wrap topbar-inner">
+        <a class="brand" href="/en/" aria-label="Kodename JPG — Home">
+            <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><rect x="2" y="4" width="20" height="16" rx="3" stroke="currentColor" stroke-width="1.8"/><path d="m7 9 3 3-3 3M12 15h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span class="brand-name">Kodename JPG</span>
+        </a>
+        <nav class="mainnav" aria-label="Main navigation">
+            <button onclick="myFunction()" class="dropbtn menu-btn" type="button" aria-label="Open menu" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>Menu</span></button>
+            <div id="myDropdown" class="dropdown-content nav-links">
+                <a href="/en/">Home</a>
+                <a href="/en/tutorial.html" class="active">Tutorials</a>
+                <a href="/en/arsip.html">Archive</a>
+                <a href="/en/tentang.html">About</a>
+            </div>
+        </nav>
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode"><svg class="icon-moon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 13.5A8.5 8.5 0 0 1 10.5 4 8.5 8.5 0 1 0 20 13.5Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><svg class="icon-sun" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.8"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+        <div class="lang-switch" role="group" aria-label="Choose language"><a href="/cara-bikin-bot-tank-battle-training.html" lang="id" onclick="try{localStorage.setItem('site-lang','id')}catch(e){}">ID</a><span class="lang-sep" aria-hidden="true">|</span><span class="lang-active" aria-current="true">EN</span></div>
+    </div>
+</header>
+<div class="container">
+
+<main class="page">
+    <div class="content-box">
+        <br>
+        <h1><b>How to Build a Tank Bot on battle.training</b></h1>
+        </br>
+        <p class="tutorial-meta">Written: Nov 26, 2026 · Level: Intermediate · Category: AI Agent</p>
+        <br><a href="/en/">Home</a> > <a href="/en/tutorial.html">Tutorials</a> > How to Build a Tank Bot on battle.training</br>
+        <button class="accordion">Article List</button>
+        <div class="panel">
+            <b>Archive</b>
+            <hr class="dashed"/><br>
+            <ul class="archive-list">
+                <li><a href="/en/instal-apache-mysql-php-phpmyadmin-di-archlinux.html">Install Apache, MySQL, PHP and phpMyAdmin on Archlinux</a> <span class="archive-date">2021</span></li>
+                <li><a href="/en/konfigurasi-virtual-host-apache-server-di-archlinux.html">Configure an Apache Virtual Host Server on ArchLinux</a> <span class="archive-date">Jun 12, 2021</span></li>
+                <li><a href="/en/cara-berburu-bug-bounty-dengan-agentic-bug-hunter.html">How to Hunt Bug Bounties with Agentic-Bug-Hunter</a> <span class="archive-date">Nov 18, 2026</span></li>
+                <li><a href="/en/cara-deploy-blog-statis-ke-github-pages.html">How to Deploy a Static Blog to GitHub Pages</a> <span class="archive-date">Nov 17, 2026</span></li>
+                <li><a href="/en/cara-daftar-make-fun-dengan-agent.html">How to Sign Up for make.fun with an Agent and Let the Agent Find Bounties on Its Own</a> <span class="archive-date">Nov 17, 2026</span></li>
+                <li><a href="/en/cara-pasang-google-analytics-4-dan-tag-manager-di-blog-statis.html">How to Install Google Analytics 4 and Tag Manager on a Static Blog</a> <span class="archive-date">Nov 26, 2026</span></li>
+                <li><a href="/en/cara-optimasi-seo-blog-github-pages.html">How to Optimize SEO for a GitHub Pages Blog</a> <span class="archive-date">Nov 26, 2026</span></li>
+                <li><a href="/en/cara-ikut-bounty-make-fun-pakai-ai-agent.html">How to Join make.fun Bounties with an AI Agent</a> <span class="archive-date">Nov 26, 2026</span></li>
+                <li><a href="/en/cara-bikin-bot-tank-battle-training.html">How to Build a Tank Bot on battle.training</a> <span class="archive-date">Nov 26, 2026</span></li>
+                <li><a href="/en/cara-bikin-usb-bootable-ventoy.html">How to Make a Bootable Ventoy USB</a> <span class="archive-date">Nov 26, 2026</span></li>
+            </ul>
+        </div>
+        <br>
+        battle.training is an online arena where tank bots fight each other — and you program the bot. You write a controller: a small program that commands your tank squad — when to advance, when to dodge, and when to shoot. Once the bot is activated, it fights on its own in the ladder and cups without you having to play it. This tutorial covers the whole flow, from the start until your bot is fighting, and it's all free.
+        <div class="tutorial-img">
+            <img src="/img/en/diagram-battle-tank-flow.svg" alt="How to build a tank bot on battle.training: sign up, write a controller, test, activate, fight"/>
+            <p class="img-caption">Figure 1: The tank bot workflow — from signing up to the bot fighting in the arena.</p>
+        </div>
+        <br><h2><b>What Is battle.training</b></h2>
+        <hr class="dashed"/></br>
+        <br>On battle.training, two tank squads fight in a tactical simulation. Each match runs for up to 4 minutes: the arena calls your controller 20 times per second, and each call (called a tick) has the controller decide orders for every unit — advance, turn, aim the turret, fire.
+        <br>There are two ways to win: wipe out the entire enemy squad, or collect more objective points when time runs out. The arena has objective points that award points every second while held alone; an APC inside a held objective doubles the points.
+        <br>The controller is written in JavaScript and runs on an isolated QuickJS engine — no internet and no file access. So what fights is purely your logic.
+        <div class="callout tip">
+            <b>Tip:</b> An active bot doesn't need to be played — it fights automatically whenever a ladder or cup match is scheduled.
+        </div>
+        <br><h2><b>Sign Up and Get an API Key</b></h2>
+        <hr class="dashed"/></br>
+        <br>Open battle.training and create an account. Once you're in, create your first bot — give it a memorable name, because that's the name shown on the ladder.
+        <br>When the bot is created, you will receive an API key. This API key is used for all commands to the server: uploading a controller, requesting a scrimmage, and checking the bot's status. Keep it somewhere safe, for example a password manager.
+        <div class="callout warning">
+            <b>Warning:</b> NEVER share your API key with anyone, and never put it in a public repository or in code you share. Anyone holding that key can control your bot.
+        </div>
+        <br>In this tutorial, every example that needs an API key uses the placeholder <code>&lt;api-key-kamu&gt;</code>. Replace it with your own key when running the command.
+        <br><h2><b>Anatomy of a Tank Controller</b></h2>
+        <hr class="dashed"/></br>
+        <br>One controller is a single JavaScript object with three functions: <code>draft</code>, <code>hello</code>, and <code>tick</code>.
+        <div class="c">
+            globalThis.controller = {<br>
+            &nbsp;&nbsp;draft(h) { /* pilih regu */ },<br>
+            &nbsp;&nbsp;hello(h) { /* sekali, setelah draft */ },<br>
+            &nbsp;&nbsp;tick(o)&nbsp; { /* tiap tick, kembalikan perintah */ },<br>
+            };
+        </div>
+        <br><code>draft(h)</code> picks your squad: 3 to 5 units with a maximum total cost of 12 points. Available unit types: scout (2), mbt (4), artillery (4), drone (2), missile (4), engineer (3), apc (3). If you don't write <code>draft</code>, the default squad is used: scout, MBT, and artillery.
+        <br><code>hello(h)</code> is called once after the draft, with the full rules, the map, and the finished squad. Use this time for map analysis — distance to objectives, high-ground positions, and crossing routes — because here you have the most time to spare.
+        <br><code>tick(o)</code> is called 20 times per second. You receive the observation <code>o</code>: your units, visible enemies (<code>contacts</code>), artillery shells incoming toward you (<code>incoming</code>), the score, and objective status. Reply with orders for each unit: <code>throttle</code> (gas), <code>steer</code> (turn), <code>turret</code> or <code>aimAt</code> (turret aim), and <code>fire</code> (shoot). All numbers must be integers.
+        <div class="tutorial-img">
+            <img src="/img/en/diagram-battle-tank-arena.svg" alt="Top-down illustration of the battle.training arena: a tank moving toward an objective while shooting at an enemy"/>
+            <p class="img-caption">Figure 2: The arena from above — your tank moves toward the objective while aiming its turret at the enemy.</p>
+        </div>
+        <br>Points flow every second from objectives you hold alone. Objectives on the arena's flanks are usually worth 2–3 points per second, while the central hill is worth 1. An APC inside a held objective multiplies its points. When time runs out, the winner is the one with more points — then, if tied, the one with the larger total HP.
+        <div class="callout tip">
+            <b>Tip:</b> Don't hard-code numbers like weapon range or unit cost — read them all from <code>h.rules</code>. The rules can change between seasons, and code that reads <code>h.rules</code> keeps working.
+        </div>
+        <br><h2><b>Write Your First Controller</b></h2>
+        <hr class="dashed"/></br>
+        <br>Below is the simplest controller skeleton. This bot shoots the first visible enemy, and advances when no enemy is visible. This is not a bot that will win a lot — but it's enough to understand the shape of a controller and the test flow.
+        <div class="c">
+            globalThis.controller = {<br>
+            &nbsp;&nbsp;draft(h) {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;// Pilih regu: 3-5 unit, total biaya maksimal 12<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;return ["mbt", "mbt", "scout", "scout"];<br>
+            &nbsp;&nbsp;},<br>
+            &nbsp;&nbsp;hello(h) {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;// Dipanggil sekali: simpan peta dan objektif kalau perlu<br>
+            &nbsp;&nbsp;},<br>
+            &nbsp;&nbsp;tick(o) {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;const orders = [];<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;for (const u of o.units) {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (!u.alive) continue;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const target = o.contacts[0];<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (target) {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;orders.push({ id: u.id, aimAt: [target.x, target.y], fire: true });<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} else {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Tidak ada musuh terlihat: maju<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;orders.push({ id: u.id, throttle: 65536 });<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;return { units: orders };<br>
+            &nbsp;&nbsp;},<br>
+            };
+        </div>
+        <br>Save that file as <code>controller.js</code>. Note two things: <code>aimAt</code> uses the same coordinates as those in <code>o.contacts</code>, so you can use <code>target.x</code> and <code>target.y</code> directly; and <code>fire: true</code> fires in the turret's direction once the weapon has reloaded.
+        <div class="callout tip">
+            <b>Tip:</b> Start with the default squad (scout, MBT, artillery) if you're not sure about the draft yet. A simple squad is easier to test than a complicated one.
+        </div>
+        <br><h2><b>Test and Activate Your Bot</b></h2>
+        <hr class="dashed"/></br>
+        <br>Don't activate a controller before testing it. First download the arena engine and the test tool:
+        <div class="c">
+            curl -O https://api.battle.training/sdk/arena-sim.mjs<br>
+            curl -O https://api.battle.training/sdk/local-test.mjs
+        </div>
+        <br>Then run the test against all four house bots:
+        <div class="c">
+            node local-test.mjs controller.js --seeds 20 --vs brawler,holder,random,hunter
+        </div>
+        <br>That command plays your controller against brawler, holder, random, and hunter on 20 different seeds, from both sides of the arena. Watch the tick errors column: a version with tick errors fails — fix them until it's zero.
+        <br>If you want to fight a real opponent without changing your rating, request a scrimmage:
+        <div class="c">
+            curl -X POST https://api.battle.training/api/scrimmage \<br>
+            &nbsp;&nbsp;-H "Authorization: Bearer &lt;api-key-kamu&gt;" \<br>
+            &nbsp;&nbsp;-H "content-type: application/json" \<br>
+            &nbsp;&nbsp;-d '{"bot": "nama-bot-kamu", "vs": "house:hunter", "seed": 12345}'
+        </div>
+        <br>Scrimmages are limited to 60 per day per account and don't affect rating. Use different seeds so your bot isn't only good on one map.
+        <br>Once the test results are satisfying, upload that controller to your bot via the battle.training site and activate the version. From then on the bot fights automatically on the ladder — you just monitor the results and repeat the cycle: change the controller, test again, activate again.
+        <div class="callout tip">
+            <b>Tip:</b> Keep the controller light — the arena gives about 10 milliseconds per tick. Move heavy map analysis into <code>hello()</code>, and don't scan the whole map on every tick.
+        </div>
+        <br><h2><b>Join Cups and Climb the Ladder</b></h2>
+        <hr class="dashed"/></br>
+        <br>An active bot automatically enters the ladder: a ranking that moves up and down with every match set. One set is played as two games with swapped sides, so both bots experience both sides of the same map.
+        <br>Besides the ladder, there are cups — periodic tournaments with prizes for the top ranks. A bot that is already active and tested can join a cup with no extra steps.
+        <br>To climb the ranks, two things matter most: holding objectives and focusing fire on one enemy until it's destroyed. A bot that only chases points but lets its squad get picked off one by one usually loses — and vice versa.
+        <br>Study your match replays: see where the bot loses units, where it sits still for too long, and where it shoots without hitting anything. Every improvement starts from one observation like that.
+        <br><h2><b>References</b></h2>
+        <hr class="dashed"/></br>
+        <ol>
+            <li><a href="https://battle.training">https://battle.training</a></li>
+            <li><a href="https://api.battle.training/sdk/arena-sim.mjs">https://api.battle.training/sdk/arena-sim.mjs</a></li>
+            <li><a href="https://api.battle.training/sdk/local-test.mjs">https://api.battle.training/sdk/local-test.mjs</a></li>
+        </ol>
+        <hr class="dashed"/>
+        <div class="support-box">
+            <p><b>Like this tutorial?</b> Support the author so there are even more free tutorials.</p>
+            <a class="btn btn-primary" href="https://saweria.co/Febri007" target="_blank" rel="noopener">Support via Saweria</a>
+        </div>
+        <div class="article-nav">
+            <a class="prev" href="/en/cara-ikut-bounty-make-fun-pakai-ai-agent.html">&larr; Previous article</a>
+            <a class="next" href="/en/cara-bikin-usb-bootable-ventoy.html">Next article &rarr;</a>
+        </div>
+    </div>
+</main>
+
+
+    <script>
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropbtn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+        </script>
+        <script>
+            var acc = document.getElementsByClassName("accordion");
+            var i
+            for (i = 0; i < acc.length; i++){
+                acc[i].onclick = function(){
+                    this.classList.toggle("active");
+                    this.nextElementSibling.classList.toggle("show");
+                }
+            }
+        </script>
+
+    </div>
+<footer class="site-footer">
+    <div class="wrap footer-inner">
+        <div>
+            <p class="footer-name">Kodename JPG</p>
+            <p class="footer-tag">Linux, web, and AI agent tutorials — written from experience, free to practice.</p>
+        </div>
+        <nav class="footer-nav" aria-label="Footer navigation">
+            <a href="/en/">Home</a>
+            <a href="/en/tutorial.html">Tutorials</a>
+            <a href="/en/arsip.html">Archive</a>
+            <a href="/en/tentang.html">About</a>
+        </nav>
+    </div>
+    <div class="wrap footer-bottom">
+        <p>© 2026 Febriyan · Kodename JPG · <a href="/en/privasi.html">Privacy</a> · <a href="/en/syarat.html">Terms</a> · <a href="https://saweria.co/Febri007" target="_blank" rel="noopener">Support via Saweria</a></p>
+    </div>
+</footer>
+    <script src="/js/theme.js"></script>
+</body>
+
+</html>
