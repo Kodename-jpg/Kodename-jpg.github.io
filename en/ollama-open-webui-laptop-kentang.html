@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TKZ69BJN');</script>
+    <!-- End Google Tag Manager -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-E8PLTTEFKX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-E8PLTTEFKX');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Local AI on Linux: Ollama + Open WebUI on a Potato Laptop (CPU Only) — Kodename JPG</title>
+    <meta name="description" content="Install CPU-only Ollama on lightweight Linux, download a 3B model, then set up Open WebUI — a ChatGPT-style interface that runs 100% offline in your browser.">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Febriyan">
+    <link rel="canonical" href="https://kodename-jpg.github.io/en/ollama-open-webui-laptop-kentang.html">
+<link rel="alternate" hreflang="id" href="https://kodename-jpg.github.io/ollama-open-webui-laptop-kentang.html">
+<link rel="alternate" hreflang="en" href="https://kodename-jpg.github.io/en/ollama-open-webui-laptop-kentang.html">
+<link rel="alternate" hreflang="x-default" href="https://kodename-jpg.github.io/ollama-open-webui-laptop-kentang.html">
+    <!-- TODO AdSense: paste the AdSense verification code (ca-pub-...) here after the account is approved. Don't enter a fake ID. -->
+    <meta property="og:title" content="Local AI on Linux: Ollama + Open WebUI on a Potato Laptop (CPU Only) — Kodename JPG">
+    <meta property="og:description" content="Install CPU-only Ollama on lightweight Linux, download a 3B model, then set up Open WebUI — a ChatGPT-style interface that runs 100% offline in your browser.">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Kodename JPG">
+    <meta property="og:url" content="https://kodename-jpg.github.io/en/ollama-open-webui-laptop-kentang.html">
+    <meta property="og:image" content="https://kodename-jpg.github.io/img/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Kodename JPG — Linux, Web & AI Agent Tutorials">
+    <meta property="og:locale" content="en_US">
+    <meta property="article:published_time" content="2026-11-28">
+    <meta property="article:modified_time" content="2026-11-28">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Bodoni:wght@500;600;700&family=Public+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <script>
+        /* Apply the theme (light/dark) before the page is drawn, so it doesn't flash */
+        (function () {
+            try {
+                var t = localStorage.getItem('kodename-theme');
+                if (t !== 'light' && t !== 'dark') {
+                    t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                }
+                document.documentElement.setAttribute('data-theme', t);
+            } catch (e) {}
+        })();
+    </script>
+<script>
+/* Auto-detect language: redirect to the Indonesian version for Indonesian browsers */
+(function () {
+    try {
+        if (new URLSearchParams(location.search).get('lang')) return;
+        if (localStorage.getItem('site-lang')) return;
+        var lang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+        if (lang.indexOf('id') === 0 || lang.indexOf('in') === 0) {
+            var path = location.pathname.replace(/^\/en\//, '');
+            location.replace('/' + path);
+        }
+    } catch (e) {}
+})();
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Local AI on Linux: Ollama + Open WebUI on a Potato Laptop (CPU Only)",
+  "description": "Install CPU-only Ollama on lightweight Linux, download a 3B model, then set up Open WebUI — a ChatGPT-style interface that runs 100% offline in your browser.",
+  "url": "https://kodename-jpg.github.io/en/ollama-open-webui-laptop-kentang.html",
+  "datePublished": "2026-11-28",
+  "dateModified": "2026-11-28",
+  "inLanguage": "en",
+  "author": {
+    "@type": "Person",
+    "name": "Febriyan",
+    "url": "https://github.com/Kodename-jpg"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Kodename JPG",
+    "url": "https://kodename-jpg.github.io"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://kodename-jpg.github.io/en/ollama-open-webui-laptop-kentang.html"
+  }
+}
+</script>
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TKZ69BJN"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <header class="topbar">
+    <div class="wrap topbar-inner">
+        <a class="brand" href="/en/" aria-label="Kodename JPG — Home">
+            <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><rect x="2" y="4" width="20" height="16" rx="3" stroke="currentColor" stroke-width="1.8"/><path d="m7 9 3 3-3 3M12 15h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span class="brand-name">Kodename JPG</span>
+        </a>
+        <nav class="mainnav" aria-label="Main navigation">
+            <button onclick="myFunction()" class="dropbtn menu-btn" type="button" aria-label="Open menu" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>Menu</span></button>
+            <div id="myDropdown" class="dropdown-content nav-links">
+                <a href="/en/">Home</a>
+                <a href="/en/tutorial.html" class="active">Tutorials</a>
+                <a href="/en/arsip.html">Archive</a>
+                <a href="/en/tentang.html">About</a>
+            </div>
+        </nav>
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode"><svg class="icon-moon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 13.5A8.5 8.5 0 0 1 10.5 4 8.5 8.5 0 1 0 20 13.5Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><svg class="icon-sun" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.8"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+        <div class="lang-switch" role="group" aria-label="Choose language"><a href="/ollama-open-webui-laptop-kentang.html" lang="id" onclick="try{localStorage.setItem('site-lang','id')}catch(e){}">ID</a><span class="lang-sep" aria-hidden="true">|</span><span class="lang-active" aria-current="true">EN</span></div>
+    </div>
+</header>
+<div class="container">
+
+<main class="page">
+    <div class="content-box">
+        <br>
+        <h1><b>Local AI on Linux: Ollama + Open WebUI on a Potato Laptop (CPU Only)</b></h1>
+        </br>
+        <p class="tutorial-meta">Written: Nov 28, 2026 · Level: Intermediate · Category: AI Agent</p>
+        <br><a href="/en/">Home</a> > <a href="/en/tutorial.html">Tutorials</a> > Local AI on Linux: Ollama + Open WebUI on a Potato Laptop (CPU Only)</br>
+        <button class="accordion">Article List</button>
+        <div class="panel">
+            <b>Archive</b>
+            <hr class="dashed"/><br>
+            <ul class="archive-list">
+                <li><a href="/en/instal-apache-mysql-php-phpmyadmin-di-archlinux.html">Install Apache, MySQL, PHP and phpMyAdmin on Archlinux</a> <span class="archive-date">2021</span></li>
+                <li><a href="/en/konfigurasi-virtual-host-apache-server-di-archlinux.html">Configure an Apache Virtual Host Server on ArchLinux</a> <span class="archive-date">Jun 12, 2021</span></li>
+                <li><a href="/en/cara-deploy-blog-statis-ke-github-pages.html">How to Deploy a Static Blog to GitHub Pages</a> <span class="archive-date">Nov 17, 2026</span></li>
+                <li><a href="/en/cara-daftar-make-fun-dengan-agent.html">How to Sign Up for make.fun with an Agent and Let the Agent Find Bounties on Its Own</a> <span class="archive-date">Nov 17, 2026</span></li>
+                <li><a href="/en/cara-berburu-bug-bounty-dengan-agentic-bug-hunter.html">How to Hunt Bug Bounties with Agentic-Bug-Hunter (Free, Local AI)</a> <span class="archive-date">Nov 18, 2026</span></li>
+                <li><a href="/en/cara-pasang-google-analytics-4-dan-tag-manager-di-blog-statis.html">How to Install Google Analytics 4 and Tag Manager on a Static Blog</a> <span class="archive-date">Nov 26, 2026</span></li>
+                <li><a href="/en/cara-optimasi-seo-blog-github-pages.html">How to Optimize SEO for a GitHub Pages Blog</a> <span class="archive-date">Nov 26, 2026</span></li>
+                <li><a href="/en/cara-ikut-bounty-make-fun-pakai-ai-agent.html">How to Join make.fun Bounties with an AI Agent</a> <span class="archive-date">Nov 26, 2026</span></li>
+                <li><a href="/en/cara-bikin-bot-tank-battle-training.html">How to Build a Tank Bot on battle.training</a> <span class="archive-date">Nov 26, 2026</span></li>
+                <li><a href="/en/cara-bikin-usb-bootable-ventoy.html">How to Make a Bootable Ventoy USB (Detected on Phones and Laptops)</a> <span class="archive-date">Nov 26, 2026</span></li>
+                <li><a href="/en/rekomendasi-linux-ringan-untuk-laptop-lama.html">Small and Lightweight Linux ISOs for Old Laptops (Potato PCs)</a> <span class="archive-date">Nov 28, 2026</span></li>
+                <li><a href="/en/ollama-open-webui-laptop-kentang.html">Local AI on Linux: Ollama + Open WebUI on a Potato Laptop (CPU Only)</a> <span class="archive-date">Nov 28, 2026</span></li>
+            </ul>
+        </div>
+        <br>
+        Local AI means the AI model runs on your own laptop — not on a company's server. There are two big reasons this is appealing: privacy and saving money.
+        <br><b>Privacy:</b> your chats, questions, and documents never leave your laptop — they are not sent to any server, and they are not used to train someone else's model.
+        <br><b>Saving money:</b> the models are open-weight and free, with no monthly subscription — all you need is a laptop and electricity.
+        <br>To be honest: on a potato laptop's CPU, a small (3B) model answers more slowly than ChatGPT. But for Q&amp;A, summarizing documents, and helping you write, it is fast enough. This tutorial uses <code>Ollama</code> to run the model, and <code>Open WebUI</code> as its web interface — it looks like ChatGPT, but it runs 100% offline in your browser.
+        <div class="tutorial-img">
+            <img src="/img/en/diagram-ai-lokal-arsitektur.svg" alt="Local AI architecture: browser → Open WebUI (port 3000) → Ollama (port 11434) → local model, all inside a Linux laptop"/>
+            <p class="img-caption">Figure 1: Local AI architecture — browser, Open WebUI, Ollama, and the model, all on your laptop.</p>
+        </div>
+        <br><h2><b>What You Need</b></h2>
+        <hr class="dashed"/></br>
+        <br>- A Linux laptop — if yours is old, use a lightweight distro (see the tutorial <a href="/en/rekomendasi-linux-ringan-untuk-laptop-lama.html">recommending lightweight Linux for old laptops</a>).
+        <br>- 8 GB of RAM is recommended if you want to use a 3B model (see the table below).
+        <br>- <code>Docker</code>, if you install Open WebUI with Docker — or Python <code>pip</code> if you prefer to skip Docker.
+        <br><h2><b>Step 1: Install Ollama</b></h2>
+        <hr class="dashed"/></br>
+        <br>Install Ollama with a single command — the installer sets Ollama up as a <code>systemd service</code>, and its API runs on <code>127.0.0.1:11434</code>.
+        <div class="c">
+            curl -fsSL https://ollama.com/install.sh | sh
+        </div>
+        <br><h2><b>Step 2: Download and Run a Model</b></h2>
+        <hr class="dashed"/></br>
+        <br>Download the <code>qwen2.5:3b</code> model (about 1.9 GB):
+        <div class="c">
+            ollama pull qwen2.5:3b
+        </div>
+        <br>Once the download finishes, run it and start chatting in the terminal:
+        <div class="c">
+            ollama run qwen2.5:3b
+        </div>
+        <br>Other useful commands:
+        <div class="c">
+            ollama list<br>
+            ollama ps<br>
+            ollama rm &lt;model&gt;
+        </div>
+        <br><code>ollama list</code> shows the models you have downloaded, <code>ollama ps</code> shows the models currently running, and <code>ollama rm &lt;model&gt;</code> deletes a model you no longer use.
+        <br><h2><b>Pick a Model for Your RAM</b></h2>
+        <hr class="dashed"/></br>
+        <br>Here is the rough rule — a model that is too big for your RAM will run slowly or fail to start.
+        <table>
+            <thead>
+                <tr><th>Laptop RAM</th><th>Model size</th><th>Example models</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>2–4 GB</td><td>0.5B–1.5B</td><td>qwen2.5:0.5b, llama3.2:1b</td></tr>
+                <tr><td>8 GB</td><td>3B</td><td>qwen2.5:3b (±1.9 GB), llama3.2:3b (±2.0 GB), gemma2:2b</td></tr>
+                <tr><td>16 GB</td><td>7–8B</td><td>qwen2.5:7b, llama3.1:8b, mistral:7b</td></tr>
+            </tbody>
+        </table>
+        <br>Without a GPU, a model still runs on the CPU — just more slowly. Speed depends on your RAM and on how many CPU cores you have.
+        <div class="tutorial-img">
+            <img src="/img/en/diagram-ai-lokal-install.svg" alt="Local AI install flow: install Ollama, pull a model, run Open WebUI, then open localhost:3000 in your browser"/>
+            <p class="img-caption">Figure 2: Install flow — Ollama, model, Open WebUI, then open it in your browser.</p>
+        </div>
+        <br><h2><b>Step 3: Install Open WebUI</b></h2>
+        <hr class="dashed"/></br>
+        <br><code>Open WebUI</code> is a web interface for Ollama — it looks like ChatGPT: a chat list on the left, a chat column in the middle, and you can switch models. If Ollama is on the same machine, run this container:
+        <div class="c">
+            docker run -d -p 3000:8080 --add-host=host.docker.internal:host-gateway -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:main
+        </div>
+        <br>Then open <code>http://localhost:3000</code> in your browser. The first time you open it, you are asked to create an account — this first account automatically becomes the admin.
+        <br><b>Alternative without Docker.</b> If you would rather not use Docker, install it with <code>pip</code>:
+        <div class="c">
+            pip install open-webui
+        </div>
+        <br>then run it:
+        <div class="c">
+            open-webui serve
+        </div>
+        <br>Open WebUI will run on <code>http://localhost:8080</code>.
+        <br><b>Single-container CPU-only alternative.</b> There is also an image that already contains both Ollama and Open WebUI — good for CPU-only setups, with no separate Ollama install:
+        <div class="c">
+            docker run -d -p 3000:8080 -v ollama:/root/.ollama -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:ollama
+        </div>
+        <div class="callout warning">
+            <b>Warning — Ollama is not reachable from the container:</b> Ollama binds to <code>127.0.0.1</code> by default — meaning it can only be reached from the laptop itself. The Open WebUI Docker container runs on its own network, so it cannot reach Ollama on the laptop's localhost. The symptom: Open WebUI shows a "Server Connection Error". Fix it by letting Ollama listen on all interfaces — run <code>systemctl edit ollama</code> and add this line in the editor that opens:
+        </div>
+        <div class="c">
+            [Service]<br>
+            Environment="OLLAMA_HOST=0.0.0.0:11434"
+        </div>
+        <br>Save, then reload and restart Ollama:
+        <div class="c">
+            systemctl daemon-reload<br>
+            systemctl restart ollama
+        </div>
+        <div class="callout warning">
+            <b>Warning:</b> NEVER expose port <code>11434</code> directly to the internet — Ollama has no authentication, and anyone who finds that port can use your Ollama.
+        </div>
+        <br><h2><b>Quick Troubleshooting</b></h2>
+        <hr class="dashed"/></br>
+        <br>- Slow model → use a smaller model, or shrink the context.
+        <br>- Open WebUI shows a "Server Connection Error" → check <code>OLLAMA_HOST</code> (see the gotcha above).
+        <br><h2><b>Where to Go Next</b></h2>
+        <hr class="dashed"/></br>
+        <br>You now have your own private, offline ChatGPT. Two next steps: access this AI from your phone, and turn it into a search engine for your private documents.
+        <br>- <a href="/en/akses-ai-lokal-dari-hp-cloudflare-tunnel.html">Accessing Local AI from Your Phone via LAN &amp; Cloudflare Tunnel</a>
+        <br>- <a href="/en/rag-lokal-dokumen-pribadi-open-webui.html">Building a Private Document Search Web App (Local RAG) with Open WebUI</a>
+        <br><h2><b>References</b></h2>
+        <hr class="dashed"/></br>
+        <ol>
+            <li><a href="https://ollama.com">https://ollama.com</a></li>
+            <li><a href="https://pypi.org/project/open-webui/">https://pypi.org/project/open-webui/</a></li>
+            <li><a href="https://www.codewithanjum.com/run-llm-locally-with-ollama">https://www.codewithanjum.com/run-llm-locally-with-ollama</a></li>
+            <li><a href="https://clinerds.com/article/ollama-local-llm-cheap-vps">https://clinerds.com/article/ollama-local-llm-cheap-vps</a></li>
+        </ol>
+
+        <hr class="dashed"/>
+        <div class="support-box">
+            <p><b>Like this tutorial?</b> Support the author so there are even more free tutorials.</p>
+            <a class="btn btn-primary" href="https://saweria.co/Febri007" target="_blank" rel="noopener">Support via Saweria</a>
+        </div>
+        <div class="article-nav">
+            <a class="prev" href="/en/rekomendasi-linux-ringan-untuk-laptop-lama.html">&larr; Previous article</a>
+        </div>
+    </div>
+</main>
+
+
+    <script>
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropbtn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+        </script>
+        <script>
+            var acc = document.getElementsByClassName("accordion");
+            var i
+            for (i = 0; i < acc.length; i++){
+                acc[i].onclick = function(){
+                    this.classList.toggle("active");
+                    this.nextElementSibling.classList.toggle("show");
+                }
+            }
+        </script>
+
+    </div>
+<footer class="site-footer">
+    <div class="wrap footer-inner">
+        <div>
+            <p class="footer-name">Kodename JPG</p>
+            <p class="footer-tag">Linux, web, and AI agent tutorials — written from experience, free to practice.</p>
+        </div>
+        <nav class="footer-nav" aria-label="Footer navigation">
+            <a href="/en/">Home</a>
+            <a href="/en/tutorial.html">Tutorials</a>
+            <a href="/en/arsip.html">Archive</a>
+            <a href="/en/tentang.html">About</a>
+        </nav>
+    </div>
+    <div class="wrap footer-bottom">
+        <p>© 2026 Febriyan · Kodename JPG · <a href="/en/privasi.html">Privacy</a> · <a href="/en/syarat.html">Terms</a> · <a href="https://saweria.co/Febri007" target="_blank" rel="noopener">Support via Saweria</a></p>
+    </div>
+</footer>
+    <script src="/js/theme.js"></script>
+</body>
+
+</html>

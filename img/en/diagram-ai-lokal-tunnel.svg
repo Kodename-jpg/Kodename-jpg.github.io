@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="300" viewBox="0 0 420 300" font-family="Arial, Helvetica, sans-serif">
+<rect x="0" y="0" width="420" height="300" rx="8" fill="#ffffff"/>
+<text x="210" y="24" text-anchor="middle" font-size="16" font-weight="bold" fill="#2c2c2c">Access from your phone outside home</text>
+<text x="210" y="42" text-anchor="middle" font-size="16" font-weight="bold" fill="#2c2c2c">via Cloudflare Tunnel</text>
+<rect x="60" y="56" width="300" height="44" rx="4" fill="#55557f"/>
+<text x="210" y="74" text-anchor="middle" font-size="13" fill="#ffffff">Phone (outside home)</text>
+<text x="210" y="91" text-anchor="middle" font-size="11" fill="#dddddd">phone browser, anywhere</text>
+<line x1="210" y1="100" x2="210" y2="106" stroke="#55557f" stroke-width="2"/>
+<polygon points="210,112 205,105 215,105" fill="#55557f"/>
+<rect x="60" y="112" width="300" height="44" rx="4" fill="#55557f"/>
+<text x="210" y="130" text-anchor="middle" font-size="13" fill="#ffffff">Cloudflare Edge</text>
+<text x="210" y="147" text-anchor="middle" font-size="11" fill="#dddddd">trycloudflare.com / your own domain</text>
+<line x1="210" y1="156" x2="210" y2="162" stroke="#55557f" stroke-width="2"/>
+<polygon points="210,168 205,161 215,161" fill="#55557f"/>
+<rect x="60" y="168" width="300" height="44" rx="4" fill="#55557f"/>
+<text x="210" y="186" text-anchor="middle" font-size="13" fill="#ffffff">cloudflared on the laptop</text>
+<text x="210" y="203" text-anchor="middle" font-size="11" fill="#dddddd">tunnel client</text>
+<line x1="210" y1="212" x2="210" y2="218" stroke="#55557f" stroke-width="2"/>
+<polygon points="210,224 205,217 215,217" fill="#55557f"/>
+<rect x="60" y="224" width="300" height="44" rx="4" fill="#55557f"/>
+<text x="210" y="242" text-anchor="middle" font-size="13" fill="#ffffff">Open WebUI</text>
+<text x="210" y="259" text-anchor="middle" font-size="11" fill="#dddddd">port 3000</text>
+<text x="210" y="290" text-anchor="middle" font-size="12" fill="#666666">No open ports, no public IP</text>
+</svg>

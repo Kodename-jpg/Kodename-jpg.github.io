@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="282" viewBox="0 0 420 282" font-family="Arial, Helvetica, sans-serif">
+<rect x="0" y="0" width="420" height="282" rx="8" fill="#ffffff"/>
+<text x="210" y="28" text-anchor="middle" font-size="17" font-weight="bold" fill="#2c2c2c">Akses lewat WiFi yang sama (LAN)</text>
+<rect x="60" y="54" width="300" height="44" rx="4" fill="#55557f"/>
+<text x="210" y="72" text-anchor="middle" font-size="13" fill="#ffffff">HP (browser)</text>
+<text x="210" y="89" text-anchor="middle" font-size="11" fill="#dddddd">satu WiFi dengan laptop</text>
+<line x1="210" y1="98" x2="210" y2="104" stroke="#55557f" stroke-width="2"/>
+<polygon points="210,110 205,103 215,103" fill="#55557f"/>
+<rect x="60" y="110" width="300" height="44" rx="4" fill="#55557f"/>
+<text x="210" y="128" text-anchor="middle" font-size="13" fill="#ffffff">Router WiFi</text>
+<text x="210" y="145" text-anchor="middle" font-size="11" fill="#dddddd">jaringan lokal di rumah</text>
+<line x1="210" y1="154" x2="210" y2="160" stroke="#55557f" stroke-width="2"/>
+<polygon points="210,166 205,159 215,159" fill="#55557f"/>
+<rect x="60" y="166" width="300" height="44" rx="4" fill="#55557f"/>
+<text x="210" y="184" text-anchor="middle" font-size="13" fill="#ffffff">Laptop — Open WebUI</text>
+<text x="210" y="201" text-anchor="middle" font-size="11" fill="#dddddd">port 3000</text>
+<text x="210" y="240" text-anchor="middle" font-size="13" fill="#2c2c2c">http://IP-laptop:3000</text>
+<text x="210" y="264" text-anchor="middle" font-size="12" fill="#666666">IP laptop dari perintah ip addr</text>
+</svg>

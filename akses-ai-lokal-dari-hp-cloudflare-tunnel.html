@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TKZ69BJN');</script>
+    <!-- End Google Tag Manager -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-E8PLTTEFKX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-E8PLTTEFKX');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mengakses AI Lokal dari HP via Jaringan Lokal & Cloudflare Tunnel — Kodename JPG</title>
+    <meta name="description" content="Buka Open WebUI di HP: lewat WiFi yang sama dengan alamat IP laptop, atau dari mana saja lewat Cloudflare Tunnel — tanpa buka port dan tanpa IP publik.">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Febriyan">
+    <link rel="canonical" href="https://kodename-jpg.github.io/akses-ai-lokal-dari-hp-cloudflare-tunnel.html">
+<link rel="alternate" hreflang="id" href="https://kodename-jpg.github.io/akses-ai-lokal-dari-hp-cloudflare-tunnel.html">
+<link rel="alternate" hreflang="en" href="https://kodename-jpg.github.io/en/akses-ai-lokal-dari-hp-cloudflare-tunnel.html">
+<link rel="alternate" hreflang="x-default" href="https://kodename-jpg.github.io/akses-ai-lokal-dari-hp-cloudflare-tunnel.html">
+    <!-- TODO AdSense: tempel kode verifikasi AdSense (ca-pub-...) di sini setelah akun disetujui. Jangan isi ID palsu. -->
+    <meta property="og:title" content="Mengakses AI Lokal dari HP via Jaringan Lokal & Cloudflare Tunnel — Kodename JPG">
+    <meta property="og:description" content="Buka Open WebUI di HP: lewat WiFi yang sama dengan alamat IP laptop, atau dari mana saja lewat Cloudflare Tunnel — tanpa buka port dan tanpa IP publik.">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Kodename JPG">
+    <meta property="og:url" content="https://kodename-jpg.github.io/akses-ai-lokal-dari-hp-cloudflare-tunnel.html">
+    <meta property="og:image" content="https://kodename-jpg.github.io/img/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Kodename JPG — Tutorial Linux, Web & AI Agent">
+    <meta property="og:locale" content="id_ID">
+    <meta property="article:published_time" content="2026-11-28">
+    <meta property="article:modified_time" content="2026-11-28">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Bodoni:wght@500;600;700&family=Public+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        /* Terapkan tema (siang/malam) sebelum halaman digambar, biar tidak berkedip */
+        (function () {
+            try {
+                var t = localStorage.getItem('kodename-theme');
+                if (t !== 'light' && t !== 'dark') {
+                    t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                }
+                document.documentElement.setAttribute('data-theme', t);
+            } catch (e) {}
+        })();
+    </script>
+<script>
+/* Auto-detect bahasa: arahkan ke versi Inggris bila browser bukan Indonesia */
+(function () {
+    try {
+        if (new URLSearchParams(location.search).get('lang')) return;
+        if (localStorage.getItem('site-lang')) return;
+        var lang = (navigator.language || navigator.userLanguage || 'id').toLowerCase();
+        if (lang.indexOf('id') !== 0 && lang.indexOf('in') !== 0) {
+            var path = location.pathname.replace(/^\//, '');
+            location.replace('/en/' + path);
+        }
+    } catch (e) {}
+})();
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Mengakses AI Lokal dari HP via Jaringan Lokal & Cloudflare Tunnel",
+  "description": "Buka Open WebUI di HP: lewat WiFi yang sama dengan alamat IP laptop, atau dari mana saja lewat Cloudflare Tunnel — tanpa buka port dan tanpa IP publik.",
+  "url": "https://kodename-jpg.github.io/akses-ai-lokal-dari-hp-cloudflare-tunnel.html",
+  "datePublished": "2026-11-28",
+  "dateModified": "2026-11-28",
+  "inLanguage": "id",
+  "author": {
+    "@type": "Person",
+    "name": "Febriyan",
+    "url": "https://github.com/Kodename-jpg"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Kodename JPG",
+    "url": "https://kodename-jpg.github.io"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://kodename-jpg.github.io/akses-ai-lokal-dari-hp-cloudflare-tunnel.html"
+  }
+}
+</script>
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TKZ69BJN"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <header class="topbar">
+    <div class="wrap topbar-inner">
+        <a class="brand" href="/" aria-label="Kodename JPG — Beranda">
+            <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><rect x="2" y="4" width="20" height="16" rx="3" stroke="currentColor" stroke-width="1.8"/><path d="m7 9 3 3-3 3M12 15h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span class="brand-name">Kodename JPG</span>
+        </a>
+        <nav class="mainnav" aria-label="Navigasi utama">
+            <button onclick="myFunction()" class="dropbtn menu-btn" type="button" aria-label="Buka menu" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>Menu</span></button>
+            <div id="myDropdown" class="dropdown-content nav-links">
+                <a href="/">Beranda</a>
+                <a href="/tutorial.html" class="active">Tutorial</a>
+                <a href="/arsip.html">Arsip</a>
+                <a href="/tentang.html">Tentang</a>
+            </div>
+        </nav>
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Ganti ke mode malam" title="Ganti ke mode malam"><svg class="icon-moon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 13.5A8.5 8.5 0 0 1 10.5 4 8.5 8.5 0 1 0 20 13.5Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><svg class="icon-sun" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.8"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+        <div class="lang-switch" role="group" aria-label="Pilih bahasa"><span class="lang-active" aria-current="true">ID</span><span class="lang-sep" aria-hidden="true">|</span><a href="/en/akses-ai-lokal-dari-hp-cloudflare-tunnel.html" lang="en" onclick="try{localStorage.setItem('site-lang','en')}catch(e){}">EN</a></div>
+    </div>
+</header>
+<div class="container">
+
+<main class="page">
+    <div class="content-box">
+        <br>
+        <h1><b>Mengakses AI Lokal dari HP via Jaringan Lokal &amp; Cloudflare Tunnel</b></h1>
+        </br>
+        <p class="tutorial-meta">Ditulis: 28 Nov 2026 · Level: Menengah · Kategori: AI Agent</p>
+        <br><a href="/">Home</a> > <a href="/tutorial.html">Tutorial</a> > Mengakses AI Lokal dari HP via Jaringan Lokal &amp; Cloudflare Tunnel</br>
+        <button class="accordion">Daftar Artikel</button>
+        <div class="panel">
+            <b>Arsip</b>
+            <hr class="dashed"/><br>
+            <ul class="archive-list">
+                <li><a href="/instal-apache-mysql-php-phpmyadmin-di-archlinux.html">Instal Apache, MySQL, PHP dan phpMyAdmin di Archlinux</a> <span class="archive-date">2021</span></li>
+                <li><a href="/konfigurasi-virtual-host-apache-server-di-archlinux.html">Konfigurasi Virtual Host Apache Server Di ArchLinux</a> <span class="archive-date">12 Jun 2021</span></li>
+                <li><a href="/cara-deploy-blog-statis-ke-github-pages.html">Cara Deploy Blog Statis ke GitHub Pages</a> <span class="archive-date">17 Nov 2026</span></li>
+                <li><a href="/cara-daftar-make-fun-dengan-agent.html">Cara Daftar make.fun dengan Agent dan Biar Agent Cari Bounty Sendiri</a> <span class="archive-date">17 Nov 2026</span></li>
+                <li><a href="/cara-berburu-bug-bounty-dengan-agentic-bug-hunter.html">Cara Berburu Bug Bounty dengan Agentic-Bug-Hunter (Gratis, AI Lokal)</a> <span class="archive-date">18 Nov 2026</span></li>
+                <li><a href="/cara-pasang-google-analytics-4-dan-tag-manager-di-blog-statis.html">Cara Pasang Google Analytics 4 dan Tag Manager di Blog Statis</a> <span class="archive-date">26 Nov 2026</span></li>
+                <li><a href="/cara-optimasi-seo-blog-github-pages.html">Cara Optimasi SEO Blog GitHub Pages</a> <span class="archive-date">26 Nov 2026</span></li>
+                <li><a href="/cara-ikut-bounty-make-fun-pakai-ai-agent.html">Cara Ikut Bounty make.fun Pakai AI Agent</a> <span class="archive-date">26 Nov 2026</span></li>
+                <li><a href="/cara-bikin-bot-tank-battle-training.html">Cara Bikin Bot Tank di battle.training</a> <span class="archive-date">26 Nov 2026</span></li>
+                <li><a href="/cara-bikin-usb-bootable-ventoy.html">Cara Bikin USB Bootable Ventoy (Kedetek di HP dan Laptop)</a> <span class="archive-date">26 Nov 2026</span></li>
+                <li><a href="/rekomendasi-linux-ringan-untuk-laptop-lama.html">Rekomendasi Linux ISO Kecil dan Ringan untuk Laptop Lama (Kentang)</a> <span class="archive-date">28 Nov 2026</span></li>
+                <li><a href="/ollama-open-webui-laptop-kentang.html">AI Lokal di Linux: Ollama + Open WebUI di Laptop Kentang (CPU Only)</a> <span class="archive-date">28 Nov 2026</span></li>
+                <li><a href="/akses-ai-lokal-dari-hp-cloudflare-tunnel.html">Mengakses AI Lokal dari HP via Jaringan Lokal &amp; Cloudflare Tunnel</a> <span class="archive-date">28 Nov 2026</span></li>
+            </ul>
+        </div>
+        <br>
+        Setelah AI lokal jalan di laptop, langkah berikutnya adalah membukanya dari HP — supaya kamu bisa chat dengan AI-mu sambil rebahan, tanpa harus duduk di depan laptop. Ada dua situasi: di rumah (HP dan laptop satu WiFi) dan di luar rumah (HP di mana saja).
+        <br><b>Prasyarat:</b> tutorial sebelumnya sudah selesai — Ollama dan Open WebUI sudah jalan di laptop (<a href="/ollama-open-webui-laptop-kentang.html">AI Lokal di Linux: Ollama + Open WebUI di Laptop Kentang</a>).
+        <br><h2><b>Cara 1: Jaringan Lokal (WiFi yang Sama)</b></h2>
+        <hr class="dashed"/></br>
+        <br>Kalau HP dan laptop terhubung ke WiFi yang sama, ini cara paling gampang — tidak perlu install apa pun. Cari dulu alamat IP laptopmu:
+        <div class="c">
+            ip addr
+        </div>
+        <br>Cari baris <code>inet</code> di interface WiFi-mu (biasanya <code>wlan0</code> atau <code>wlp2s0</code>) — misalnya <code>192.168.1.10</code>. Lalu buka browser HP dan ketik:
+        <div class="c">
+            http://IP-laptop:3000
+        </div>
+        <br>Contoh: kalau IP laptopmu <code>192.168.1.10</code>, buka <code>http://192.168.1.10:3000</code>. Open WebUI akan terbuka seperti di laptop — login dengan akun admin yang kamu buat di tutorial sebelumnya.
+        <div class="tutorial-img">
+            <img src="img/diagram-ai-lokal-lan.svg" alt="Akses lewat WiFi yang sama: HP dan laptop terhubung ke router yang sama, HP membuka http://IP-laptop:3000"/>
+            <p class="img-caption">Gambar 1: Akses lewat WiFi yang sama (LAN) — HP dan laptop satu jaringan.</p>
+        </div>
+        <div class="callout tip">
+            <b>Tips:</b> Open WebUI adalah PWA — di browser HP, pilih "Add to Home Screen" (atau "Tambah ke layar utama") dan ia akan tampil seperti aplikasi, lengkap dengan ikonnya sendiri.
+        </div>
+        <br><h2><b>Cara 2: Cloudflare Quick Tunnel (Coba-Coba)</b></h2>
+        <hr class="dashed"/></br>
+        <br>Di luar rumah, IP lokal tidak bisa dijangkau — kamu butuh tunnel. Cara paling cepat: Cloudflare Quick Tunnel, tanpa akun dan tanpa membuka port di router. Install dulu <code>cloudflared</code> (Debian/Ubuntu):
+        <div class="c">
+            curl -L https://pkg.cloudflare.com/install.sh | sudo bash<br>
+            sudo apt install cloudflared
+        </div>
+        <br>Lalu jalankan satu perintah ini di laptop:
+        <div class="c">
+            cloudflared tunnel --url http://localhost:3000
+        </div>
+        <br>Cloudflared akan menampilkan URL acak seperti <code>https://&lt;kata-kata&gt;.trycloudflare.com</code> — buka URL itu di browser HP, dari mana saja. Tanpa akun, tanpa buka port, tanpa IP publik.
+        <br>Tapi ada batasannya, jadi cara ini hanya untuk coba-coba: URL berubah setiap kali tunnel di-start ulang, tunnel mati begitu kamu menekan <code>Ctrl-C</code>, dan URL-nya PUBLIK — siapa pun yang punya link bisa membuka WebUI-mu.
+        <div class="tutorial-img">
+            <img src="img/diagram-ai-lokal-tunnel.svg" alt="Akses dari HP di luar rumah: HP → Cloudflare Edge (trycloudflare.com atau domain sendiri) → cloudflared di laptop → Open WebUI port 3000"/>
+            <p class="img-caption">Gambar 2: Akses dari HP di luar rumah lewat Cloudflare Tunnel.</p>
+        </div>
+        <br><h2><b>Cara 3: Named Tunnel (Permanen)</b></h2>
+        <hr class="dashed"/></br>
+        <br>Kalau mau URL yang tetap dan tunnel yang jalan terus, pakai named tunnel. Yang dibutuhkan: akun Cloudflare gratis dan domain yang DNS-nya dikelola Cloudflare. Langkah-langkahnya:
+        <br><b>1. Login dan buat tunnel.</b>
+        <div class="c">
+            cloudflared tunnel login<br>
+            cloudflared tunnel create ai-laptop
+        </div>
+        <br><b>2. Arahkan subdomain ke tunnel.</b>
+        <div class="c">
+            cloudflared tunnel route dns ai-laptop ai.domainmu.com
+        </div>
+        <br>Ganti <code>ai.domainmu.com</code> dengan subdomain milikmu.
+        <br><b>3. Buat file konfigurasi</b> <code>~/.cloudflared/config.yml</code> — isinya nama tunnel, file kredensial, dan ingress yang mengarahkan hostname ke Open WebUI:
+        <div class="c">
+            tunnel: ai-laptop<br>
+            credentials-file: ~/.cloudflared/&lt;id-tunnel&gt;.json<br>
+            ingress:<br>
+            &nbsp;&nbsp;- hostname: ai.domainmu.com<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;service: http://localhost:3000<br>
+            &nbsp;&nbsp;- service: http_status:404
+        </div>
+        <br><b>4. Jalankan tunnel.</b>
+        <div class="c">
+            cloudflared tunnel run ai-laptop
+        </div>
+        <br><b>5. Supaya jalan otomatis saat boot,</b> install sebagai service:
+        <div class="c">
+            sudo cloudflared service install
+        </div>
+        <div class="callout warning">
+            <b>Perhatian:</b> Begitu WebUI-mu bisa diakses dari internet, kunci pintunya. Pasang Cloudflare Access (Zero Trust, gratis sampai 50 pengguna) di hostname tunnel supaya hanya kamu yang bisa login. Jangan pernah mengekspos Ollama di port <code>11434</code> langsung — dan pakai password admin Open WebUI yang kuat.
+        </div>
+        <br><h2><b>Troubleshooting Singkat</b></h2>
+        <hr class="dashed"/></br>
+        <br>- URL Quick Tunnel berubah tiap start → pakai named tunnel (Cara 3).
+        <br>- HP tidak bisa membuka <code>IP:3000</code> di WiFi → pastikan HP dan laptop satu jaringan, dan cek firewall laptop.
+        <br><h2><b>Referensi</b></h2>
+        <hr class="dashed"/></br>
+        <ol>
+            <li><a href="https://flaviocopes.com/cloudflare-quick-tunnels/">https://flaviocopes.com/cloudflare-quick-tunnels/</a></li>
+            <li><a href="https://dev.to/recca0120/cloudflare-tunnel-in-2026-expose-localhost-without-opening-ports-or-buying-an-ip-32l5">https://dev.to/recca0120/cloudflare-tunnel-in-2026-expose-localhost-without-opening-ports-or-buying-an-ip-32l5</a></li>
+            <li><a href="https://dev.to/coder-safal/how-to-expose-localhost-to-the-internet-with-free-https-cloudflare-tunnel-no-port-forwarding-e6o">https://dev.to/coder-safal/how-to-expose-localhost-to-the-internet-with-free-https-cloudflare-tunnel-no-port-forwarding-e6o</a></li>
+        </ol>
+
+        <hr class="dashed"/>
+        <div class="support-box">
+            <p><b>Suka tutorial ini?</b> Dukung penulis biar makin banyak tutorial gratis.</p>
+            <a class="btn btn-primary" href="https://saweria.co/Febri007" target="_blank" rel="noopener">Dukung via Saweria</a>
+        </div>
+        <div class="article-nav">
+            <a class="prev" href="/ollama-open-webui-laptop-kentang.html">&larr; Artikel sebelumnya</a>
+        </div>
+    </div>
+</main>
+
+
+    <script>
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropbtn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+        </script>
+        <script>
+            var acc = document.getElementsByClassName("accordion");
+            var i
+            for (i = 0; i < acc.length; i++){
+                acc[i].onclick = function(){
+                    this.classList.toggle("active");
+                    this.nextElementSibling.classList.toggle("show");
+                }
+            }
+        </script>
+
+    </div>
+<footer class="site-footer">
+    <div class="wrap footer-inner">
+        <div>
+            <p class="footer-name">Kodename JPG</p>
+            <p class="footer-tag">Tutorial Linux, web, dan AI agent — ditulis dari pengalaman, gratis dipraktikkan.</p>
+        </div>
+        <nav class="footer-nav" aria-label="Navigasi footer">
+            <a href="/">Beranda</a>
+            <a href="/tutorial.html">Tutorial</a>
+            <a href="/arsip.html">Arsip</a>
+            <a href="/tentang.html">Tentang</a>
+        </nav>
+    </div>
+    <div class="wrap footer-bottom">
+        <p>© 2026 Febriyan · Kodename JPG · <a href="/privasi.html">Privasi</a> · <a href="/syarat.html">Syarat</a> · <a href="https://saweria.co/Febri007" target="_blank" rel="noopener">Dukung via Saweria</a></p>
+    </div>
+</footer>
+    <script src="js/theme.js"></script>
+</body>
+
+</html>
